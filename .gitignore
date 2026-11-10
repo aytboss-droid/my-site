@@ -16,3 +16,9 @@ node_modules/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Vercel 연결 정보 (vercel 명령이 만듦)
+.vercel/
+
+.vercel
+.env*
