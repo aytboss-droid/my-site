@@ -1,0 +1,2459 @@
+[
+  {
+    "name": "국립중앙박물관",
+    "region": "서울",
+    "city": "용산구",
+    "type": "관광지",
+    "why": "2025년 관람객 650만 명으로 역대 최다, 뮷즈 굿즈 오픈런",
+    "keywords": [
+      "박물관",
+      "뮷즈",
+      "케데헌"
+    ],
+    "source": "https://www.newsis.com/view/NISX20260102_0003463626"
+  },
+  {
+    "name": "성수동 카페거리",
+    "region": "서울",
+    "city": "성동구",
+    "type": "관광지",
+    "why": "팝업스토어와 공장형 카페가 몰린 외국인 필수 코스",
+    "keywords": [
+      "팝업",
+      "카페투어",
+      "성수"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "서울숲",
+    "region": "서울",
+    "city": "성동구",
+    "type": "관광지",
+    "why": "외국인 리뷰 감성 분석 1위, 성수와 묶는 산책 명소",
+    "keywords": [
+      "공원",
+      "산책",
+      "피크닉"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "롯데월드타워 서울스카이",
+    "region": "서울",
+    "city": "송파구",
+    "type": "관광지",
+    "why": "국내 최고층 전망대에서 서울 전경과 야경 감상",
+    "keywords": [
+      "전망대",
+      "야경",
+      "잠실"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "광장시장",
+    "region": "서울",
+    "city": "종로구",
+    "type": "관광지",
+    "why": "외국인 관광객이 몰리는 먹거리 시장, 빈대떡·육회",
+    "keywords": [
+      "전통시장",
+      "길거리음식",
+      "외국인"
+    ],
+    "source": "https://www.newsis.com/view/NISX20260721_0003717515"
+  },
+  {
+    "name": "동대문디자인플라자",
+    "region": "서울",
+    "city": "중구",
+    "type": "관광지",
+    "why": "외국인 방문 상위권, 전시와 야간 조명이 볼거리",
+    "keywords": [
+      "DDP",
+      "전시",
+      "건축"
+    ],
+    "source": "https://www.newsis.com/view/NISX20260721_0003717515"
+  },
+  {
+    "name": "낙산공원",
+    "region": "서울",
+    "city": "종로구",
+    "type": "관광지",
+    "why": "성곽길 따라 걷는 야경 산책로로 외국인에게 인기",
+    "keywords": [
+      "성곽길",
+      "야경",
+      "산책"
+    ],
+    "source": "https://www.newsis.com/view/NISX20260721_0003717515"
+  },
+  {
+    "name": "서촌마을",
+    "region": "서울",
+    "city": "종로구",
+    "type": "관광지",
+    "why": "한옥 골목에 작은 갤러리·카페가 모인 동네 산책지",
+    "keywords": [
+      "한옥",
+      "골목",
+      "카페"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "여의도한강공원",
+    "region": "서울",
+    "city": "영등포구",
+    "type": "관광지",
+    "why": "한강 피크닉과 축제가 열리는 대표 강변 공원",
+    "keywords": [
+      "한강",
+      "피크닉",
+      "불꽃축제"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "창덕궁",
+    "region": "서울",
+    "city": "종로구",
+    "type": "관광지",
+    "why": "궁궐 방문객 증가세 속 후원 관람이 인기",
+    "keywords": [
+      "궁궐",
+      "후원",
+      "세계유산"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "런던베이글뮤지엄 잠실점",
+    "region": "서울",
+    "city": "송파구",
+    "type": "카페",
+    "why": "캐치테이블 2025 웨이팅 1위, 2년 연속",
+    "keywords": [
+      "베이글",
+      "웨이팅",
+      "잠실"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "아티스트 베이커리",
+    "region": "서울",
+    "city": "종로구",
+    "type": "카페",
+    "why": "2025 웨이팅 상위권에 오른 소금빵 베이커리",
+    "keywords": [
+      "베이커리",
+      "소금빵",
+      "안국"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "히키니쿠토코메 도산",
+    "region": "서울",
+    "city": "강남구",
+    "type": "맛집",
+    "why": "2025 예약·방문 상위권의 함박스테이크 정식집",
+    "keywords": [
+      "함박",
+      "도산",
+      "예약"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "쿠촐로 서울",
+    "region": "서울",
+    "city": "용산구",
+    "type": "맛집",
+    "why": "2025 예약 상위권, 양식 부문 인기 1위 레스토랑",
+    "keywords": [
+      "이탈리안",
+      "파스타",
+      "예약"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "밍글스",
+    "region": "서울",
+    "city": "강남구",
+    "type": "맛집",
+    "why": "미쉐린 3스타, 미식가 방문이 가장 많은 파인다이닝",
+    "keywords": [
+      "미쉐린",
+      "한식",
+      "파인다이닝"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "이타닉 가든",
+    "region": "서울",
+    "city": "강남구",
+    "type": "맛집",
+    "why": "흑백요리사 손종원 셰프의 미쉐린 1스타",
+    "keywords": [
+      "흑백요리사",
+      "미쉐린",
+      "파인다이닝"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "포시즌스 호텔 서울",
+    "region": "서울",
+    "city": "종로구",
+    "type": "숙소",
+    "why": "포브스 트래블 가이드 2025 5성 선정",
+    "keywords": [
+      "럭셔리",
+      "광화문",
+      "호캉스"
+    ],
+    "source": "https://www.card-gorilla.com/hotel/detail/3603"
+  },
+  {
+    "name": "서울신라호텔",
+    "region": "서울",
+    "city": "중구",
+    "type": "숙소",
+    "why": "포브스 5성 7년 연속, 국내 유일 기록",
+    "keywords": [
+      "럭셔리",
+      "포브스",
+      "호캉스"
+    ],
+    "source": "https://www.card-gorilla.com/hotel/detail/3603"
+  },
+  {
+    "name": "조선 팰리스 서울 강남",
+    "region": "서울",
+    "city": "강남구",
+    "type": "숙소",
+    "why": "포브스 4성 신규 진입, 고층 도심 뷰 호캉스",
+    "keywords": [
+      "강남",
+      "호캉스",
+      "도심뷰"
+    ],
+    "source": "https://www.card-gorilla.com/hotel/detail/3603"
+  },
+  {
+    "name": "소피텔 앰배서더 서울",
+    "region": "서울",
+    "city": "송파구",
+    "type": "숙소",
+    "why": "석촌호수 옆 프랑스풍 호텔, 포브스 추천 등급",
+    "keywords": [
+      "잠실",
+      "석촌호수",
+      "호캉스"
+    ],
+    "source": "https://www.card-gorilla.com/hotel/detail/3603"
+  },
+  {
+    "name": "흰여울문화마을",
+    "region": "부산",
+    "city": "영도구",
+    "type": "관광지",
+    "why": "바다 절벽 마을과 해안터널 포토존이 인기",
+    "keywords": [
+      "영도",
+      "포토존",
+      "해안산책"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-busan-hotel-bx2-best-spots-to-visit-in-busan"
+  },
+  {
+    "name": "해운대 블루라인파크",
+    "region": "부산",
+    "city": "해운대구",
+    "type": "관광지",
+    "why": "해변열차·스카이캡슐로 즐기는 해안 풍경",
+    "keywords": [
+      "스카이캡슐",
+      "해변열차",
+      "미포"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-busan-hotel-bx2-best-spots-to-visit-in-busan"
+  },
+  {
+    "name": "광안리해수욕장",
+    "region": "부산",
+    "city": "수영구",
+    "type": "관광지",
+    "why": "광안대교 야경과 드론 라이트쇼로 대표 야경지",
+    "keywords": [
+      "드론쇼",
+      "광안대교",
+      "야경"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-busan-hotel-bx2-best-spots-to-visit-in-busan"
+  },
+  {
+    "name": "해동 용궁사",
+    "region": "부산",
+    "city": "기장군",
+    "type": "관광지",
+    "why": "바닷가 바위 위 사찰, 외국인 방문이 많은 명소",
+    "keywords": [
+      "사찰",
+      "기장",
+      "오션뷰"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "스카이라인 루지 부산",
+    "region": "부산",
+    "city": "기장군",
+    "type": "관광지",
+    "why": "오시리아 관광단지의 가족·커플 체험 명소",
+    "keywords": [
+      "루지",
+      "오시리아",
+      "체험"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "부산엑스더스카이",
+    "region": "부산",
+    "city": "해운대구",
+    "type": "관광지",
+    "why": "엘시티 100층 전망대에서 해운대 한눈에",
+    "keywords": [
+      "전망대",
+      "엘시티",
+      "야경"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "태종대",
+    "region": "부산",
+    "city": "영도구",
+    "type": "관광지",
+    "why": "해안 절벽과 등대를 도는 영도 대표 산책 코스",
+    "keywords": [
+      "영도",
+      "등대",
+      "절벽"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "다대포 해변공원",
+    "region": "부산",
+    "city": "사하구",
+    "type": "관광지",
+    "why": "강소형 잠재관광지, 낙조와 분수로 유명",
+    "keywords": [
+      "노을",
+      "분수",
+      "다대포"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "이재모피자 부산역점",
+    "region": "부산",
+    "city": "동구",
+    "type": "맛집",
+    "why": "캐치테이블 2025 웨이팅 전국 2위 치즈 피자",
+    "keywords": [
+      "피자",
+      "웨이팅",
+      "임실치즈"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "톤쇼우 광안점",
+    "region": "부산",
+    "city": "수영구",
+    "type": "맛집",
+    "why": "2025 웨이팅 전국 3위 두툼한 돈카츠",
+    "keywords": [
+      "돈카츠",
+      "웨이팅",
+      "광안리"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "해목",
+    "region": "부산",
+    "city": "해운대구",
+    "type": "맛집",
+    "why": "장어덮밥 히츠마부시로 줄 서는 해운대 맛집",
+    "keywords": [
+      "장어덮밥",
+      "해운대",
+      "웨이팅"
+    ],
+    "source": "https://hotplacehunter.co.kr/?p=86746"
+  },
+  {
+    "name": "피아크",
+    "region": "부산",
+    "city": "영도구",
+    "type": "카페",
+    "why": "조선소 옆 대형 베이커리, 바다 뷰 층별 공간",
+    "keywords": [
+      "오션뷰",
+      "베이커리",
+      "영도"
+    ],
+    "source": "https://www.harpersbazaar.co.kr/article/68951"
+  },
+  {
+    "name": "웨이브온 커피",
+    "region": "부산",
+    "city": "기장군",
+    "type": "카페",
+    "why": "어느 자리서나 바다가 보이는 기장 대형 카페",
+    "keywords": [
+      "오션뷰",
+      "기장",
+      "대형카페"
+    ],
+    "source": "https://creatrip.com/blog/11597"
+  },
+  {
+    "name": "코랄라니",
+    "region": "부산",
+    "city": "기장군",
+    "type": "카페",
+    "why": "건물 전체가 오션뷰인 기장 바닷가 대형 카페",
+    "keywords": [
+      "오션뷰",
+      "기장",
+      "대형카페"
+    ],
+    "source": "https://creatrip.com/blog/11597"
+  },
+  {
+    "name": "시그니엘 부산",
+    "region": "부산",
+    "city": "해운대구",
+    "type": "숙소",
+    "why": "미쉐린 키 2개, 월드 럭셔리 호텔 어워드 연속 수상",
+    "keywords": [
+      "럭셔리",
+      "해운대",
+      "미쉐린키"
+    ],
+    "source": "https://www.theguru.co.kr/news/article.html?no=94479"
+  },
+  {
+    "name": "아난티 앳 부산 코브",
+    "region": "부산",
+    "city": "기장군",
+    "type": "숙소",
+    "why": "바다 파노라마 인피니티풀과 온천 스파",
+    "keywords": [
+      "인피니티풀",
+      "온천",
+      "기장"
+    ],
+    "source": "https://kr.trip.com/guide/accommodation/busan-accommodation.html"
+  },
+  {
+    "name": "그랜드 조선 부산",
+    "region": "부산",
+    "city": "해운대구",
+    "type": "숙소",
+    "why": "해운대 해변 바로 앞, 루프탑 풀로 인기",
+    "keywords": [
+      "해운대",
+      "수영장",
+      "호캉스"
+    ],
+    "source": "https://kr.trip.com/guide/accommodation/busan-accommodation.html"
+  },
+  {
+    "name": "사유원",
+    "region": "대구",
+    "city": "군위군",
+    "type": "관광지",
+    "why": "2025 한국관광의 별 유망관광지, 건축가 정원",
+    "keywords": [
+      "정원",
+      "건축",
+      "팔공산"
+    ],
+    "source": "https://www.heraldk.com/article/2025113019412449220"
+  },
+  {
+    "name": "서문시장 야시장",
+    "region": "대구",
+    "city": "중구",
+    "type": "관광지",
+    "why": "대구 대표 야시장, 먹거리 노점 투어 명소",
+    "keywords": [
+      "야시장",
+      "전통시장",
+      "먹거리"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "동성로",
+    "region": "대구",
+    "city": "중구",
+    "type": "관광지",
+    "why": "대구 도심 쇼핑·카페 거리, 한국관광 100선",
+    "keywords": [
+      "쇼핑",
+      "번화가",
+      "카페"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "팔공산국립공원",
+    "region": "대구",
+    "city": "동구",
+    "type": "관광지",
+    "why": "국립공원 승격 후 단풍·케이블카로 주목",
+    "keywords": [
+      "국립공원",
+      "단풍",
+      "케이블카"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "수성못",
+    "region": "대구",
+    "city": "수성구",
+    "type": "관광지",
+    "why": "호수 산책과 조명 야경, 주변 카페가 많은 명소",
+    "keywords": [
+      "호수",
+      "야경",
+      "카페"
+    ],
+    "source": "https://brunch.co.kr/@travie/1935"
+  },
+  {
+    "name": "앞산전망대",
+    "region": "대구",
+    "city": "남구",
+    "type": "관광지",
+    "why": "대구 시내 노을과 야경을 보는 대표 전망대",
+    "keywords": [
+      "야경",
+      "노을",
+      "케이블카"
+    ],
+    "source": "https://www.trvlogue.com/ko/daegu-apsan-night-view"
+  },
+  {
+    "name": "옻골마을",
+    "region": "대구",
+    "city": "동구",
+    "type": "관광지",
+    "why": "2025 강소형 잠재관광지 선정 전통 한옥마을",
+    "keywords": [
+      "한옥",
+      "전통마을",
+      "산책"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "삼송빵집 본점",
+    "region": "대구",
+    "city": "중구",
+    "type": "카페",
+    "why": "통옥수수빵 원조, 빵지순례 필수 코스",
+    "keywords": [
+      "빵지순례",
+      "옥수수빵",
+      "베이커리"
+    ],
+    "source": "https://dgmbc.com/NewsArticle/633884"
+  },
+  {
+    "name": "대구 근대골목단팥빵 본점",
+    "region": "대구",
+    "city": "중구",
+    "type": "카페",
+    "why": "직접 끓인 팥소, 전국 3대 빵집으로 소개",
+    "keywords": [
+      "단팥빵",
+      "빵지순례",
+      "근대골목"
+    ],
+    "source": "https://news.samsung.com/kr/%EA%B0%A4%EB%9F%AD%EC%8B%9C%EC%99%80-%EB%96%A0%EB%82%98%EB%8A%94-%ED%8C%94%EB%8F%84-%EB%AF%B8%EA%B0%81-%EC%97%AC%ED%96%89-%E2%91%A6%EB%8C%80%EA%B5%AC%EB%A5%BC-%EB%A7%9B%EC%9E%88%EA%B2%8C-%EC%A6%90"
+  },
+  {
+    "name": "걸리버막창",
+    "region": "대구",
+    "city": "남구",
+    "type": "맛집",
+    "why": "커뮤니티 맛집 순위에 오른 대구 막창 강자",
+    "keywords": [
+      "막창",
+      "대구음식",
+      "로컬"
+    ],
+    "source": "https://m.cafe.daum.net/subdued20club/ReHf/5692225"
+  },
+  {
+    "name": "송도 센트럴파크",
+    "region": "인천",
+    "city": "연수구",
+    "type": "관광지",
+    "why": "고층 빌딩 사이 수로 공원, 수상택시와 야경",
+    "keywords": [
+      "공원",
+      "야경",
+      "송도"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "교동도",
+    "region": "인천",
+    "city": "강화군",
+    "type": "관광지",
+    "why": "대룡시장 레트로 골목이 있는 평화의 섬",
+    "keywords": [
+      "대룡시장",
+      "레트로",
+      "섬여행"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "인천 개항장 거리",
+    "region": "인천",
+    "city": "중구",
+    "type": "관광지",
+    "why": "근대 건축 카페와 소품숍이 모인 산책 거리",
+    "keywords": [
+      "개항장",
+      "근대건축",
+      "카페"
+    ],
+    "source": "https://www.heraldk.com/article/2026021000594418727"
+  },
+  {
+    "name": "신포국제시장",
+    "region": "인천",
+    "city": "중구",
+    "type": "관광지",
+    "why": "100년 넘은 상설시장, 닭강정 먹거리 여행지",
+    "keywords": [
+      "전통시장",
+      "닭강정",
+      "먹거리"
+    ],
+    "source": "https://www.heraldk.com/article/2026021000594418727"
+  },
+  {
+    "name": "월미도",
+    "region": "인천",
+    "city": "중구",
+    "type": "관광지",
+    "why": "바다열차와 놀이시설, 해안 산책이 즐거운 섬",
+    "keywords": [
+      "월미바다열차",
+      "놀이공원",
+      "바다"
+    ],
+    "source": "https://travelmapjourney.com/incheon-open-port-wolmido-songdo-choice/"
+  },
+  {
+    "name": "인스파이어 엔터테인먼트 리조트",
+    "region": "인천",
+    "city": "중구",
+    "type": "숙소",
+    "why": "대형 아레나 공연과 실내 워터파크 갖춘 복합리조트",
+    "keywords": [
+      "복합리조트",
+      "공연",
+      "영종도"
+    ],
+    "source": "https://magazine.hankyung.com/business/article/202403062285b"
+  },
+  {
+    "name": "파라다이스시티",
+    "region": "인천",
+    "city": "중구",
+    "type": "숙소",
+    "why": "실내 테마파크 원더박스와 스파 갖춘 영종도 리조트",
+    "keywords": [
+      "원더박스",
+      "스파",
+      "영종도"
+    ],
+    "source": "https://v.daum.net/v/20240313101246753"
+  },
+  {
+    "name": "포레스트아웃팅스 송도점",
+    "region": "인천",
+    "city": "연수구",
+    "type": "카페",
+    "why": "실내 정원 콘셉트의 인천 랭킹 대형 카페",
+    "keywords": [
+      "대형카페",
+      "실내정원",
+      "송도"
+    ],
+    "source": "https://hotplacehunter.co.kr/tag/%EC%9D%B8%EC%B2%9C-%ED%95%AB%ED%94%8C/"
+  },
+  {
+    "name": "선녀풍",
+    "region": "인천",
+    "city": "중구",
+    "type": "맛집",
+    "why": "영종도 손님 많은 해산물 맛집으로 반복 언급",
+    "keywords": [
+      "영종도",
+      "해물",
+      "칼국수"
+    ],
+    "source": "https://m.cafe.daum.net/jinjugo44seoul/NiLI/2848"
+  },
+  {
+    "name": "양림동 펭귄마을",
+    "region": "광주",
+    "city": "남구",
+    "type": "관광지",
+    "why": "폐자재 펭귄 조형물의 레트로 골목, 광주 방문의 해 추천",
+    "keywords": [
+      "레트로",
+      "골목",
+      "양림동"
+    ],
+    "source": "https://www.fnnews.com/news/202510011337226782"
+  },
+  {
+    "name": "동명동 동리단길",
+    "region": "광주",
+    "city": "동구",
+    "type": "관광지",
+    "why": "감성 카페와 독립서점이 모인 골목 여행지",
+    "keywords": [
+      "카페거리",
+      "서점",
+      "골목"
+    ],
+    "source": "https://www.fnnews.com/news/202510011337226782"
+  },
+  {
+    "name": "사직공원 전망대",
+    "region": "광주",
+    "city": "남구",
+    "type": "관광지",
+    "why": "도심 야경과 달맞이 명소로 광주시가 추천",
+    "keywords": [
+      "야경",
+      "전망대",
+      "달맞이"
+    ],
+    "source": "https://www.fnnews.com/news/202510011337226782"
+  },
+  {
+    "name": "1913송정역시장",
+    "region": "광주",
+    "city": "광산구",
+    "type": "관광지",
+    "why": "100년 넘은 역전 시장, 상추튀김·떡갈비 골목",
+    "keywords": [
+      "전통시장",
+      "상추튀김",
+      "KTX"
+    ],
+    "source": "https://www.ktriptips.com/eng/shopping/2494513"
+  },
+  {
+    "name": "무등산국립공원",
+    "region": "광주",
+    "city": "북구",
+    "type": "관광지",
+    "why": "주상절리 서석대 등 광주 대표 산행지",
+    "keywords": [
+      "국립공원",
+      "주상절리",
+      "등산"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "장태산자연휴양림",
+    "region": "대전",
+    "city": "서구",
+    "type": "관광지",
+    "why": "메타세쿼이아 숲과 출렁다리로 대전 유일 100선",
+    "keywords": [
+      "메타세쿼이아",
+      "출렁다리",
+      "휴양림"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "한빛탑",
+    "region": "대전",
+    "city": "유성구",
+    "type": "관광지",
+    "why": "엑스포 상징탑, 미디어파사드·음악분수 야경",
+    "keywords": [
+      "야경",
+      "엑스포",
+      "전망대"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "대전오월드",
+    "region": "대전",
+    "city": "중구",
+    "type": "관광지",
+    "why": "동물원·놀이공원 합친 중부권 최대 테마파크",
+    "keywords": [
+      "테마파크",
+      "동물원",
+      "가족여행"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-daejeon-hotel-bx2-daejoen-toruist-attraction-best-4"
+  },
+  {
+    "name": "헤레디움",
+    "region": "대전",
+    "city": "동구",
+    "type": "관광지",
+    "why": "근대 건물을 살린 복합 예술공간 전시로 주목",
+    "keywords": [
+      "전시",
+      "근대건축",
+      "미술관"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "광천식당",
+    "region": "대전",
+    "city": "중구",
+    "type": "맛집",
+    "why": "대전의 맛으로 꼽힌 두부두루치기 노포",
+    "keywords": [
+      "두부두루치기",
+      "노포",
+      "대전의맛"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "오씨칼국수",
+    "region": "대전",
+    "city": "동구",
+    "type": "맛집",
+    "why": "물총조개 칼국수로 줄 서는 칼국수 도시 대표집",
+    "keywords": [
+      "칼국수",
+      "조개",
+      "노포"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "김희선 제육짜글이",
+    "region": "대전",
+    "city": "유성구",
+    "type": "맛집",
+    "why": "봉명동으로 옮긴 제육짜글이 인기 식당",
+    "keywords": [
+      "제육",
+      "짜글이",
+      "유성"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "하레하레 둔산점",
+    "region": "대전",
+    "city": "서구",
+    "type": "카페",
+    "why": "성심당과 함께 찾는 대전 빵지순례 베이커리",
+    "keywords": [
+      "베이커리",
+      "빵지순례",
+      "둔산"
+    ],
+    "source": "https://www.gqkorea.co.kr/?p=325553"
+  },
+  {
+    "name": "왕관식당",
+    "region": "대전",
+    "city": "동구",
+    "type": "맛집",
+    "why": "점심 2시간만 여는 육회비빔밥 노포",
+    "keywords": [
+      "육회비빔밥",
+      "노포",
+      "점심"
+    ],
+    "source": "https://www.siksinhot.com/P/1496272"
+  },
+  {
+    "name": "태화강 국가정원",
+    "region": "울산",
+    "city": "중구",
+    "type": "관광지",
+    "why": "십리대숲과 계절 꽃밭의 국가정원, 100선 연속 선정",
+    "keywords": [
+      "국가정원",
+      "십리대숲",
+      "은하수길"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "영남알프스",
+    "region": "울산",
+    "city": "울주군",
+    "type": "관광지",
+    "why": "억새 평원 1000m급 산군, 가을 트레킹 성지",
+    "keywords": [
+      "억새",
+      "트레킹",
+      "하늘억새길"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "울산대교 전망대",
+    "region": "울산",
+    "city": "동구",
+    "type": "관광지",
+    "why": "울산대교와 공업단지 야경을 내려다보는 전망대",
+    "keywords": [
+      "야경",
+      "전망대",
+      "울산대교"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-ulsan-hotel-bx2-ulsan-travel-course-guide-best"
+  },
+  {
+    "name": "간절곶",
+    "region": "울산",
+    "city": "울주군",
+    "type": "관광지",
+    "why": "한반도 일출이 빠른 곶, 해맞이 명소",
+    "keywords": [
+      "일출",
+      "등대",
+      "바다"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-ulsan-hotel-bx2-ulsan-travel-course-guide-best"
+  },
+  {
+    "name": "백림",
+    "region": "울산",
+    "city": "남구",
+    "type": "카페",
+    "why": "시그니처 커피로 유명한 울산 빵지순례 카페",
+    "keywords": [
+      "베이커리",
+      "빵지순례",
+      "삼산동"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-ulsan-hotel-bx2-ulsan-travel-course-guide-best"
+  },
+  {
+    "name": "롯데호텔 울산",
+    "region": "울산",
+    "city": "남구",
+    "type": "숙소",
+    "why": "관람차 뷰와 백화점 연결로 추천되는 숙소",
+    "keywords": [
+      "관람차뷰",
+      "도심호텔",
+      "삼산동"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-ulsan-hotel-bx2-ulsan-travel-course-guide-best"
+  },
+  {
+    "name": "이응다리",
+    "region": "세종",
+    "city": "세종시",
+    "type": "관광지",
+    "why": "원형 복층 보행교, 금강 야경과 빛 축제 명소",
+    "keywords": [
+      "금강보행교",
+      "야경",
+      "산책"
+    ],
+    "source": "https://view.nate.com/travel/view/405721/"
+  },
+  {
+    "name": "세종호수공원",
+    "region": "세종",
+    "city": "세종시",
+    "type": "관광지",
+    "why": "국내 최대 인공호수 공원, 무료 산책·자전거",
+    "keywords": [
+      "호수",
+      "피크닉",
+      "자전거"
+    ],
+    "source": "https://view.nate.com/travel/view/405721/"
+  },
+  {
+    "name": "베어트리파크",
+    "region": "세종",
+    "city": "세종시",
+    "type": "관광지",
+    "why": "곰 동물원과 정원, 계절 축제로 가족 나들이 인기",
+    "keywords": [
+      "정원",
+      "곰",
+      "꽃축제"
+    ],
+    "source": "https://www.heraldk.com/article/2026021120010519938"
+  },
+  {
+    "name": "코트야드 바이 메리어트 세종",
+    "region": "세종",
+    "city": "세종시",
+    "type": "숙소",
+    "why": "세종 첫 관광호텔, 호수공원 레이크뷰 라운지",
+    "keywords": [
+      "호수뷰",
+      "라운지",
+      "호텔"
+    ],
+    "source": "https://view.nate.com/travel/view/405721/"
+  },
+  {
+    "name": "광명동굴",
+    "region": "경기",
+    "city": "광명시",
+    "type": "관광지",
+    "why": "폐광을 살린 동굴 테마파크, 100선 단골",
+    "keywords": [
+      "동굴",
+      "테마파크",
+      "실내여행"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "파주 헤이리 예술마을",
+    "region": "경기",
+    "city": "파주시",
+    "type": "관광지",
+    "why": "갤러리·카페·박물관이 모인 예술인 마을",
+    "keywords": [
+      "갤러리",
+      "카페",
+      "예술"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "임진각 평화누리공원",
+    "region": "경기",
+    "city": "파주시",
+    "type": "관광지",
+    "why": "DMZ 생생누리와 바람개비 언덕의 평화 관광지",
+    "keywords": [
+      "DMZ",
+      "평화",
+      "바람개비"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "양평 두물머리",
+    "region": "경기",
+    "city": "양평군",
+    "type": "관광지",
+    "why": "두 강이 만나는 물안개 풍경의 사진 명소",
+    "keywords": [
+      "물안개",
+      "산책",
+      "사진"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "제부도 해상케이블카",
+    "region": "경기",
+    "city": "화성시",
+    "type": "관광지",
+    "why": "바다 위를 건너는 케이블카, 100선 신규 진입",
+    "keywords": [
+      "케이블카",
+      "서해",
+      "바다"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "캐리비안베이",
+    "region": "경기",
+    "city": "용인시",
+    "type": "관광지",
+    "why": "대형 워터파크, 2025-2026 한국관광 100선",
+    "keywords": [
+      "워터파크",
+      "가족",
+      "용인"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "국립현대미술관 과천",
+    "region": "경기",
+    "city": "과천시",
+    "type": "관광지",
+    "why": "대형 야외조각과 기획전이 있는 미술관",
+    "keywords": [
+      "미술관",
+      "전시",
+      "과천"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "한국민속촌",
+    "region": "경기",
+    "city": "용인시",
+    "type": "관광지",
+    "why": "조선 마을 체험과 야간 공포 축제로 MZ 인기",
+    "keywords": [
+      "민속촌",
+      "체험",
+      "축제"
+    ],
+    "source": "https://www.korea.kr/news/policyNewsView.do?newsId=148951619"
+  },
+  {
+    "name": "스타필드 수원 별마당도서관",
+    "region": "경기",
+    "city": "수원시",
+    "type": "관광지",
+    "why": "4~7층을 뚫은 22m 서가의 사진 명소",
+    "keywords": [
+      "별마당도서관",
+      "쇼핑몰",
+      "포토존"
+    ],
+    "source": "https://heypop.kr/n/88407/"
+  },
+  {
+    "name": "김포함상공원",
+    "region": "경기",
+    "city": "김포시",
+    "type": "관광지",
+    "why": "실제 군함을 개방한 2025 강소형 잠재관광지",
+    "keywords": [
+      "군함",
+      "체험",
+      "김포"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "문지리535",
+    "region": "경기",
+    "city": "파주시",
+    "type": "카페",
+    "why": "식물원 콘셉트 대형 카페, 쪽파 스콘이 시그니처",
+    "keywords": [
+      "대형카페",
+      "식물원",
+      "스콘"
+    ],
+    "source": "https://www.harpersbazaar.co.kr/article/58932"
+  },
+  {
+    "name": "뮌스터담",
+    "region": "경기",
+    "city": "파주시",
+    "type": "카페",
+    "why": "넓은 정원과 산책로를 갖춘 파주 대형 카페",
+    "keywords": [
+      "대형카페",
+      "정원",
+      "피크닉"
+    ],
+    "source": "https://www.harpersbazaar.co.kr/article/58932"
+  },
+  {
+    "name": "홍종흔 베이커리 미사한강점",
+    "region": "경기",
+    "city": "하남시",
+    "type": "카페",
+    "why": "명장 베이커리, 소금빵으로 찾는 한강변 카페",
+    "keywords": [
+      "베이커리",
+      "소금빵",
+      "미사"
+    ],
+    "source": "https://polle.com/place/4vMt5m/%ED%99%8D%EC%A2%85%ED%9D%94%20%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%A6%AC"
+  },
+  {
+    "name": "곤지암리조트",
+    "region": "경기",
+    "city": "광주시",
+    "type": "숙소",
+    "why": "사계절 종합리조트, 높은 이용 평점과 화담숲",
+    "keywords": [
+      "리조트",
+      "화담숲",
+      "스키"
+    ],
+    "source": "https://www.yeogi.com/accommodation/hotel/kr/%EA%B2%BD%EA%B8%B0%EB%8F%84/%EA%B4%91%EC%A3%BC%EC%8B%9C"
+  },
+  {
+    "name": "뮤지엄산",
+    "region": "강원",
+    "city": "원주시",
+    "type": "관광지",
+    "why": "안도 다다오 건축과 제임스 터렐관이 있는 미술관",
+    "keywords": [
+      "건축",
+      "미술관",
+      "안도다다오"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "도째비골스카이밸리",
+    "region": "강원",
+    "city": "동해시",
+    "type": "관광지",
+    "why": "바다 위 스카이워크와 자이언트 슬라이드",
+    "keywords": [
+      "스카이워크",
+      "오션뷰",
+      "체험"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "무릉별유천지",
+    "region": "강원",
+    "city": "동해시",
+    "type": "관광지",
+    "why": "석회석 폐광지를 바꾼 에메랄드빛 호수 체험지",
+    "keywords": [
+      "폐광재생",
+      "호수",
+      "루지"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "발왕산 천년주목숲길",
+    "region": "강원",
+    "city": "평창군",
+    "type": "관광지",
+    "why": "케이블카로 오르는 해발 1458m 주목 숲길",
+    "keywords": [
+      "케이블카",
+      "숲길",
+      "스카이워크"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "남이섬",
+    "region": "강원",
+    "city": "춘천시",
+    "type": "관광지",
+    "why": "메타세쿼이아 길과 단풍, 외국인 관광 필수지",
+    "keywords": [
+      "메타세쿼이아",
+      "단풍",
+      "섬"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "한탄강 주상절리길",
+    "region": "강원",
+    "city": "철원군",
+    "type": "관광지",
+    "why": "절벽에 매단 잔도로 걷는 지질공원 트레킹",
+    "keywords": [
+      "잔도",
+      "주상절리",
+      "지질공원"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "인제 원대리 자작나무 숲",
+    "region": "강원",
+    "city": "인제군",
+    "type": "관광지",
+    "why": "하얀 자작나무가 빽빽한 사진·트레킹 명소",
+    "keywords": [
+      "자작나무",
+      "숲",
+      "트레킹"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "정동심곡 바다부채길",
+    "region": "강원",
+    "city": "강릉시",
+    "type": "관광지",
+    "why": "해안단구 옆을 걷는 2.9km 바닷길 트레킹",
+    "keywords": [
+      "해안길",
+      "정동진",
+      "트레킹"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "속초관광수산시장",
+    "region": "강원",
+    "city": "속초시",
+    "type": "관광지",
+    "why": "닭강정·오징어순대로 줄 서는 속초 대표 시장",
+    "keywords": [
+      "닭강정",
+      "전통시장",
+      "먹거리"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "김유정 레일바이크",
+    "region": "강원",
+    "city": "춘천시",
+    "type": "관광지",
+    "why": "2025 한국관광의 별 무장애 관광지 선정",
+    "keywords": [
+      "레일바이크",
+      "무장애",
+      "가족"
+    ],
+    "source": "https://www.news1.kr/amp/industry/hotel-tourism/5989700"
+  },
+  {
+    "name": "횡성호수길 5구간",
+    "region": "강원",
+    "city": "횡성군",
+    "type": "관광지",
+    "why": "호수 옆 숲길, 2025 강소형 잠재관광지",
+    "keywords": [
+      "호수길",
+      "트레킹",
+      "힐링"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "서피비치",
+    "region": "강원",
+    "city": "양양군",
+    "type": "관광지",
+    "why": "서핑 전용 해변, 양양 서핑 붐의 중심지",
+    "keywords": [
+      "서핑",
+      "양양",
+      "해변"
+    ],
+    "source": "https://www.ajunews.com/view/20210708085750305"
+  },
+  {
+    "name": "솔올미술관",
+    "region": "강원",
+    "city": "강릉시",
+    "type": "관광지",
+    "why": "리처드 마이어 설계 미술관, 카페와 함께 인기",
+    "keywords": [
+      "미술관",
+      "건축",
+      "강릉"
+    ],
+    "source": "https://www.marieclairekorea.com/?p=391837"
+  },
+  {
+    "name": "초당할머니순두부",
+    "region": "강원",
+    "city": "강릉시",
+    "type": "맛집",
+    "why": "1976년부터 이어온 초당순두부 원조급 노포",
+    "keywords": [
+      "초당순두부",
+      "노포",
+      "강릉"
+    ],
+    "source": "https://hotplacehunter.co.kr/?p=88553"
+  },
+  {
+    "name": "P.E.I coffee",
+    "region": "강원",
+    "city": "속초시",
+    "type": "카페",
+    "why": "모든 좌석이 바다를 향한 속초 오션뷰 카페",
+    "keywords": [
+      "오션뷰",
+      "속초",
+      "카페"
+    ],
+    "source": "https://hotplacehunter.co.kr/?p=65579"
+  },
+  {
+    "name": "인터콘티넨탈 알펜시아 평창 리조트",
+    "region": "강원",
+    "city": "평창군",
+    "type": "숙소",
+    "why": "스키와 산악 뷰를 즐기는 평창 대표 리조트 호텔",
+    "keywords": [
+      "스키",
+      "평창",
+      "리조트"
+    ],
+    "source": "https://www.ihg.com/ko/gangwon-do-korea-republic-of"
+  },
+  {
+    "name": "단양 만천하 스카이워크",
+    "region": "충북",
+    "city": "단양군",
+    "type": "관광지",
+    "why": "남한강 절벽 위 전망대와 알파인코스터",
+    "keywords": [
+      "스카이워크",
+      "전망대",
+      "남한강"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "단양강 잔도",
+    "region": "충북",
+    "city": "단양군",
+    "type": "관광지",
+    "why": "절벽에 붙여 만든 1.2km 강변 잔도길",
+    "keywords": [
+      "잔도",
+      "강변산책",
+      "야경"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "청풍호반케이블카",
+    "region": "충북",
+    "city": "제천시",
+    "type": "관광지",
+    "why": "청풍호와 산 능선을 잇는 내륙 최장급 케이블카",
+    "keywords": [
+      "케이블카",
+      "청풍호",
+      "전망"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "청남대",
+    "region": "충북",
+    "city": "청주시",
+    "type": "관광지",
+    "why": "옛 대통령 별장, 대청호 정원과 산책길",
+    "keywords": [
+      "대통령별장",
+      "정원",
+      "대청호"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "법주사",
+    "region": "충북",
+    "city": "보은군",
+    "type": "관광지",
+    "why": "속리산 세계유산 사찰, 단풍철 인기",
+    "keywords": [
+      "사찰",
+      "세계유산",
+      "속리산"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "중앙탑사적공원",
+    "region": "충북",
+    "city": "충주시",
+    "type": "관광지",
+    "why": "탄금호 무지개길과 함께 100선 신규 선정",
+    "keywords": [
+      "탄금호",
+      "산책",
+      "충주"
+    ],
+    "source": "https://kpinews.kr/newsView/179549220119658&dt=m"
+  },
+  {
+    "name": "레인보우힐링관광지",
+    "region": "충북",
+    "city": "영동군",
+    "type": "관광지",
+    "why": "2025 강소형 잠재관광지, 와인·숲 체험",
+    "keywords": [
+      "힐링",
+      "와인",
+      "영동"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "리솜포레스트",
+    "region": "충북",
+    "city": "제천시",
+    "type": "숙소",
+    "why": "숲속 친환경 리조트, 높은 평점의 독채 객실",
+    "keywords": [
+      "숲속",
+      "리조트",
+      "제천"
+    ],
+    "source": "https://www.yeogi.com/accommodation/hotel/kr/%EC%B6%A9%EC%B2%AD%EB%B6%81%EB%8F%84/%EC%A0%9C%EC%B2%9C%EC%8B%9C"
+  },
+  {
+    "name": "카페목간",
+    "region": "충북",
+    "city": "청주시",
+    "type": "카페",
+    "why": "옛 목욕탕 건물을 개조한 청주 이색 카페",
+    "keywords": [
+      "레트로",
+      "목욕탕",
+      "청주"
+    ],
+    "source": "https://www.esquirekorea.co.kr/eee/1839"
+  },
+  {
+    "name": "공주 무령왕릉과 왕릉원",
+    "region": "충남",
+    "city": "공주시",
+    "type": "관광지",
+    "why": "백제 왕릉 세계유산, 백제문화제 시즌 인기",
+    "keywords": [
+      "백제",
+      "세계유산",
+      "공주"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "부여 서동공원 궁남지",
+    "region": "충남",
+    "city": "부여군",
+    "type": "관광지",
+    "why": "연꽃과 버드나무 연못, 백제 정원 산책",
+    "keywords": [
+      "연꽃",
+      "백제",
+      "정원"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "부소산성",
+    "region": "충남",
+    "city": "부여군",
+    "type": "관광지",
+    "why": "낙화암과 백마강을 잇는 백제 산성길",
+    "keywords": [
+      "백제",
+      "낙화암",
+      "산성"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "태안 꽃지해수욕장",
+    "region": "충남",
+    "city": "태안군",
+    "type": "관광지",
+    "why": "할미·할아비바위 낙조로 이름난 서해 해변",
+    "keywords": [
+      "낙조",
+      "해변",
+      "안면도"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "대천해수욕장",
+    "region": "충남",
+    "city": "보령시",
+    "type": "관광지",
+    "why": "머드축제 무대이자 서해 최대급 해수욕장",
+    "keywords": [
+      "머드축제",
+      "해변",
+      "보령"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "예당호 출렁다리",
+    "region": "충남",
+    "city": "예산군",
+    "type": "관광지",
+    "why": "호수 위 출렁다리와 음악분수, 모노레일",
+    "keywords": [
+      "출렁다리",
+      "호수",
+      "음악분수"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "서산 해미읍성",
+    "region": "충남",
+    "city": "서산시",
+    "type": "관광지",
+    "why": "보존 잘된 조선 읍성, 축제와 산책 명소",
+    "keywords": [
+      "읍성",
+      "역사",
+      "축제"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "독립기념관",
+    "region": "충남",
+    "city": "천안시",
+    "type": "관광지",
+    "why": "한국관광 100선, 단풍나무 숲길과 전시관",
+    "keywords": [
+      "역사",
+      "단풍",
+      "천안"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "당진 면천읍성",
+    "region": "충남",
+    "city": "당진시",
+    "type": "관광지",
+    "why": "2025 강소형 잠재관광지, 복원 읍성 마을",
+    "keywords": [
+      "읍성",
+      "골목",
+      "당진"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "토모노야 료칸",
+    "region": "충남",
+    "city": "보령시",
+    "type": "숙소",
+    "why": "객실 히노키탕이 있는 보령 료칸 감성 숙소",
+    "keywords": [
+      "료칸",
+      "히노키탕",
+      "보령"
+    ],
+    "source": "https://www.yeogi.com/contents/domestic/chungcheongnam"
+  },
+  {
+    "name": "파라다이스 스파 도고",
+    "region": "충남",
+    "city": "아산시",
+    "type": "숙소",
+    "why": "온천 수영장을 갖춘 아산 대표 온천 휴양지",
+    "keywords": [
+      "온천",
+      "스파",
+      "아산"
+    ],
+    "source": "https://www.yeogi.com/contents/domestic/chungcheongnam"
+  },
+  {
+    "name": "남원 광한루원",
+    "region": "전북",
+    "city": "남원시",
+    "type": "관광지",
+    "why": "춘향전 무대 정원, 2025-2026 100선 선정",
+    "keywords": [
+      "춘향전",
+      "정원",
+      "남원"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1020619"
+  },
+  {
+    "name": "완주 오성한옥마을",
+    "region": "전북",
+    "city": "완주군",
+    "type": "관광지",
+    "why": "BTS 화보 촬영지로 알려진 산속 한옥마을",
+    "keywords": [
+      "한옥",
+      "BTS",
+      "카페"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "무주 태권도원",
+    "region": "전북",
+    "city": "무주군",
+    "type": "관광지",
+    "why": "태권도 공연과 체험, 100선 선정 테마 관광지",
+    "keywords": [
+      "태권도",
+      "체험",
+      "무주"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "진안 마이산도립공원",
+    "region": "전북",
+    "city": "진안군",
+    "type": "관광지",
+    "why": "말 귀 닮은 봉우리와 탑사, 벚꽃 명소",
+    "keywords": [
+      "탑사",
+      "벚꽃",
+      "도립공원"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "정읍 내장산국립공원",
+    "region": "전북",
+    "city": "정읍시",
+    "type": "관광지",
+    "why": "가을 단풍 1번지, 11월 단풍 절정",
+    "keywords": [
+      "단풍",
+      "국립공원",
+      "정읍"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "변산반도국립공원",
+    "region": "전북",
+    "city": "부안군",
+    "type": "관광지",
+    "why": "채석강 해식절벽과 서해 낙조 드라이브",
+    "keywords": [
+      "채석강",
+      "낙조",
+      "부안"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "순창 강천산 군립공원",
+    "region": "전북",
+    "city": "순창군",
+    "type": "관광지",
+    "why": "맨발 산책로와 단풍으로 사랑받는 계곡",
+    "keywords": [
+      "맨발길",
+      "단풍",
+      "계곡"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "고창 상하농원",
+    "region": "전북",
+    "city": "고창군",
+    "type": "관광지",
+    "why": "2025 한국관광의 별 콘텐츠 선정 농촌 체험 농원",
+    "keywords": [
+      "팜스테이",
+      "체험",
+      "워케이션"
+    ],
+    "source": "https://www.news1.kr/amp/industry/hotel-tourism/5989700"
+  },
+  {
+    "name": "순창발효테마파크",
+    "region": "전북",
+    "city": "순창군",
+    "type": "관광지",
+    "why": "장류 발효 체험, 2025 강소형 잠재관광지",
+    "keywords": [
+      "발효",
+      "고추장",
+      "체험"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "경암동 철길마을",
+    "region": "전북",
+    "city": "군산시",
+    "type": "관광지",
+    "why": "옛 철길 따라 교복·불량식품 레트로 체험",
+    "keywords": [
+      "레트로",
+      "철길",
+      "군산"
+    ],
+    "source": "https://www.jjan.kr/articleAmp/20250521580185"
+  },
+  {
+    "name": "PNB풍년제과 본점",
+    "region": "전북",
+    "city": "전주시",
+    "type": "카페",
+    "why": "수제 초코파이 원조로 알려진 전주 대표 빵집",
+    "keywords": [
+      "초코파이",
+      "빵지순례",
+      "전주"
+    ],
+    "source": "https://polle.com/place/5wi9jt/PNB%20%ED%92%8D%EB%85%84%EC%A0%9C%EA%B3%BC"
+  },
+  {
+    "name": "베테랑칼국수",
+    "region": "전북",
+    "city": "전주시",
+    "type": "맛집",
+    "why": "들깨 칼국수로 웨이팅 생기는 한옥마을 노포",
+    "keywords": [
+      "칼국수",
+      "노포",
+      "한옥마을"
+    ],
+    "source": "https://polle.com/place/3UU0iz/%EB%B2%A0%ED%85%8C%EB%9E%91"
+  },
+  {
+    "name": "순천만국가정원",
+    "region": "전남",
+    "city": "순천시",
+    "type": "관광지",
+    "why": "순천만습지와 묶인 국내 1호 국가정원",
+    "keywords": [
+      "국가정원",
+      "습지",
+      "갈대"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "여수세계박람회장",
+    "region": "전남",
+    "city": "여수시",
+    "type": "관광지",
+    "why": "빅오쇼와 아쿠아플라넷이 있는 엑스포 해양공원",
+    "keywords": [
+      "엑스포",
+      "빅오쇼",
+      "야경"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "담양 죽녹원",
+    "region": "전남",
+    "city": "담양군",
+    "type": "관광지",
+    "why": "대숲 산책로와 관방제림, 100선 선정",
+    "keywords": [
+      "대나무숲",
+      "산책",
+      "담양"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "곡성 섬진강기차마을",
+    "region": "전남",
+    "city": "곡성군",
+    "type": "관광지",
+    "why": "증기기관차와 레일바이크, 장미공원",
+    "keywords": [
+      "기차",
+      "레일바이크",
+      "장미"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "목포 해상케이블카",
+    "region": "전남",
+    "city": "목포시",
+    "type": "관광지",
+    "why": "유달산과 바다를 넘는 국내 최장 해상케이블카",
+    "keywords": [
+      "케이블카",
+      "유달산",
+      "바다"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "신안 퍼플섬",
+    "region": "전남",
+    "city": "신안군",
+    "type": "관광지",
+    "why": "온통 보라색으로 꾸민 반월도·박지도",
+    "keywords": [
+      "보라색",
+      "섬",
+      "포토존"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "광양 매화마을",
+    "region": "전남",
+    "city": "광양시",
+    "type": "관광지",
+    "why": "청매실농원 매화 군락, 봄꽃 여행 1순위",
+    "keywords": [
+      "매화",
+      "봄꽃",
+      "섬진강"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "장흥 정남진 편백숲 우드랜드",
+    "region": "전남",
+    "city": "장흥군",
+    "type": "관광지",
+    "why": "편백 숲 산림욕과 목재 체험, 100선 신규",
+    "keywords": [
+      "편백숲",
+      "산림욕",
+      "힐링"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023788"
+  },
+  {
+    "name": "해남 산이정원",
+    "region": "전남",
+    "city": "해남군",
+    "type": "관광지",
+    "why": "2025 강소형 잠재관광지, 계절 꽃 정원",
+    "keywords": [
+      "정원",
+      "꽃",
+      "해남"
+    ],
+    "source": "https://sports.khan.co.kr/article/202503200546003"
+  },
+  {
+    "name": "유탑마리나 호텔&리조트",
+    "region": "전남",
+    "city": "여수시",
+    "type": "숙소",
+    "why": "낭만포차·엑스포 인근 오션뷰 호텔로 인기",
+    "keywords": [
+      "오션뷰",
+      "여수",
+      "낭만포차"
+    ],
+    "source": "https://www.yeogi.com/accommodation/hotel/kr/%EC%A0%84%EB%9D%BC%EB%82%A8%EB%8F%84/%EC%97%AC%EC%88%98%EC%8B%9C"
+  },
+  {
+    "name": "경주 황리단길",
+    "region": "경북",
+    "city": "경주시",
+    "type": "관광지",
+    "why": "2025 한국관광의 별 올해의 관광지 선정",
+    "keywords": [
+      "한옥카페",
+      "골목",
+      "경주"
+    ],
+    "source": "https://www.news1.kr/amp/industry/hotel-tourism/5989700"
+  },
+  {
+    "name": "첨성대",
+    "region": "경북",
+    "city": "경주시",
+    "type": "관광지",
+    "why": "대릉원과 이어지는 야경·꽃단지 산책 명소",
+    "keywords": [
+      "야경",
+      "신라",
+      "대릉원"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "석굴암",
+    "region": "경북",
+    "city": "경주시",
+    "type": "관광지",
+    "why": "토함산 세계유산 석굴, APEC 이후 관심 증가",
+    "keywords": [
+      "세계유산",
+      "신라",
+      "토함산"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "월정교",
+    "region": "경북",
+    "city": "경주시",
+    "type": "관광지",
+    "why": "복원 신라 다리, 밤 조명 반영 사진 명소",
+    "keywords": [
+      "야경",
+      "신라",
+      "포토존"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "안동 하회마을",
+    "region": "경북",
+    "city": "안동시",
+    "type": "관광지",
+    "why": "세계유산 전통마을, 탈춤과 부용대 전망",
+    "keywords": [
+      "세계유산",
+      "한옥",
+      "탈춤"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "국립백두대간수목원",
+    "region": "경북",
+    "city": "봉화군",
+    "type": "관광지",
+    "why": "호랑이숲과 거대한 산림 정원",
+    "keywords": [
+      "수목원",
+      "호랑이",
+      "봉화"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "포항 스페이스워크",
+    "region": "경북",
+    "city": "포항시",
+    "type": "관광지",
+    "why": "걸어 오르는 롤러코스터형 조형 전망대",
+    "keywords": [
+      "스페이스워크",
+      "전망",
+      "포항"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "청송 주왕산국립공원",
+    "region": "경북",
+    "city": "청송군",
+    "type": "관광지",
+    "why": "기암 협곡과 주산지, 가을 단풍 명소",
+    "keywords": [
+      "단풍",
+      "협곡",
+      "주산지"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "울릉도",
+    "region": "경북",
+    "city": "울릉군",
+    "type": "관광지",
+    "why": "독도와 묶는 섬 여행, 100선 연속 선정",
+    "keywords": [
+      "섬여행",
+      "독도",
+      "트레킹"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "라한셀렉트 경주",
+    "region": "경북",
+    "city": "경주시",
+    "type": "숙소",
+    "why": "APEC 정상회의 공식 만찬장으로 쓰인 보문 호텔",
+    "keywords": [
+      "APEC",
+      "보문단지",
+      "호캉스"
+    ],
+    "source": "https://www.heraldk.com/article/2025103015260534618"
+  },
+  {
+    "name": "황남관 한옥호텔",
+    "region": "경북",
+    "city": "경주시",
+    "type": "숙소",
+    "why": "황리단길 바로 옆 한옥 호텔, 한복 체험 제공",
+    "keywords": [
+      "한옥호텔",
+      "황리단길",
+      "한복"
+    ],
+    "source": "https://www.yeogi.com/content/dom-ko-gyeongju-hotel-ult-best-accommodations-5"
+  },
+  {
+    "name": "양산 통도사",
+    "region": "경남",
+    "city": "양산시",
+    "type": "관광지",
+    "why": "세계유산 불보사찰, 100선 선정",
+    "keywords": [
+      "사찰",
+      "세계유산",
+      "양산"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "남해 독일마을",
+    "region": "경남",
+    "city": "남해군",
+    "type": "관광지",
+    "why": "주황 지붕 마을과 카페, 맥주축제로 유명",
+    "keywords": [
+      "독일마을",
+      "카페",
+      "남해"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "진주성",
+    "region": "경남",
+    "city": "진주시",
+    "type": "관광지",
+    "why": "남강 유등축제 무대, 촉석루 야경",
+    "keywords": [
+      "유등축제",
+      "야경",
+      "진주"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "거제식물원",
+    "region": "경남",
+    "city": "거제시",
+    "type": "관광지",
+    "why": "거대 유리온실 정글돔으로 사진 명소",
+    "keywords": [
+      "정글돔",
+      "온실",
+      "거제"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "하동 화개장터",
+    "region": "경남",
+    "city": "하동군",
+    "type": "관광지",
+    "why": "쌍계사 십리벚꽃길과 묶는 영호남 장터",
+    "keywords": [
+      "장터",
+      "벚꽃",
+      "쌍계사"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "창녕 우포늪",
+    "region": "경남",
+    "city": "창녕군",
+    "type": "관광지",
+    "why": "국내 최대 내륙 습지, 물안개 새벽 풍경",
+    "keywords": [
+      "습지",
+      "생태",
+      "물안개"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "사천바다케이블카",
+    "region": "경남",
+    "city": "사천시",
+    "type": "관광지",
+    "why": "바다·섬·산을 잇는 케이블카, 100선 첫 선정",
+    "keywords": [
+      "케이블카",
+      "아쿠아리움",
+      "바다"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "산청 동의보감촌",
+    "region": "경남",
+    "city": "산청군",
+    "type": "관광지",
+    "why": "한방 체험과 기 체험 명소, 100선 선정",
+    "keywords": [
+      "한방",
+      "힐링",
+      "체험"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "통영 디피랑",
+    "region": "경남",
+    "city": "통영시",
+    "type": "관광지",
+    "why": "남망산 야간 디지털 테마파크",
+    "keywords": [
+      "야간",
+      "미디어아트",
+      "통영"
+    ],
+    "source": "https://www.wikitree.co.kr/articles/1023216"
+  },
+  {
+    "name": "함안 무진정",
+    "region": "경남",
+    "city": "함안군",
+    "type": "관광지",
+    "why": "낙화놀이 무대, 2025 관광의 별 콘텐츠",
+    "keywords": [
+      "낙화놀이",
+      "불꽃",
+      "정자"
+    ],
+    "source": "https://www.news1.kr/amp/industry/hotel-tourism/5989700"
+  },
+  {
+    "name": "남해 돌창고",
+    "region": "경남",
+    "city": "남해군",
+    "type": "카페",
+    "why": "옛 돌창고를 개조한 전시·카페 복합공간",
+    "keywords": [
+      "재생공간",
+      "전시",
+      "카페"
+    ],
+    "source": "https://www.harpersbazaar.co.kr/article/67136"
+  },
+  {
+    "name": "아난티 앳 남해",
+    "region": "경남",
+    "city": "남해군",
+    "type": "숙소",
+    "why": "남해 바다 골프·스파 리조트로 추천 목록 단골",
+    "keywords": [
+      "리조트",
+      "오션뷰",
+      "스파"
+    ],
+    "source": "https://kr.trip.com/guide/destination/gyeongnam-travel.html"
+  },
+  {
+    "name": "소노캄 거제",
+    "region": "경남",
+    "city": "거제시",
+    "type": "숙소",
+    "why": "전 객실 한려해상 오션뷰를 갖춘 거제 리조트",
+    "keywords": [
+      "오션뷰",
+      "리조트",
+      "거제"
+    ],
+    "source": "https://kr.trip.com/guide/destination/gyeongnam-travel.html"
+  },
+  {
+    "name": "머체왓숲길",
+    "region": "제주",
+    "city": "서귀포시",
+    "type": "관광지",
+    "why": "2025-2026 한국관광 100선 첫 선정 원시림 숲길",
+    "keywords": [
+      "숲길",
+      "트레킹",
+      "킹덤촬영지"
+    ],
+    "source": "https://www.twig24.com/news/travel-news/2025/01/20/20250120500203"
+  },
+  {
+    "name": "비양도",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "2025 한국관광의 별 친환경 관광지 선정",
+    "keywords": [
+      "섬여행",
+      "친환경",
+      "한림"
+    ],
+    "source": "https://www.news1.kr/amp/industry/hotel-tourism/5989700"
+  },
+  {
+    "name": "우도",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "7회 연속 100선, 땅콩아이스크림과 해변",
+    "keywords": [
+      "섬여행",
+      "해변",
+      "자전거"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "비자림",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "천년 비자나무 숲 산책, 100선 선정",
+    "keywords": [
+      "숲",
+      "산책",
+      "구좌"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "한라산국립공원",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "7회 연속 100선, 사계절 등반 명소",
+    "keywords": [
+      "등산",
+      "국립공원",
+      "백록담"
+    ],
+    "source": "https://www.heraldk.com/2025/06/30/%ed%95%9c%ea%b5%ad%ea%b4%80%ea%b4%91-100%ec%84%a0-%eb%b3%b4%eb%8b%88-%eb%aa%bb%ea%b0%80%eb%b3%b8%eb%8d%b0-%eb%a7%8e%ec%9d%80-%ec%9a%b0%eb%a6%ac%eb%82%98%eb%9d%bc-%e2%80%9c%ec%98%ac%ec%97%ac%eb%a6%84"
+  },
+  {
+    "name": "새별오름",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "가을 억새 물결로 유명한 애월 오름",
+    "keywords": [
+      "억새",
+      "오름",
+      "애월"
+    ],
+    "source": "https://www.yugacrew.com/crewletter/aewol-things-to-do"
+  },
+  {
+    "name": "아르떼뮤지엄 제주",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "옛 공장을 바꾼 몰입형 미디어아트 전시관",
+    "keywords": [
+      "미디어아트",
+      "실내",
+      "애월"
+    ],
+    "source": "https://www.yugacrew.com/crewletter/aewol-things-to-do"
+  },
+  {
+    "name": "스누피가든",
+    "region": "제주",
+    "city": "제주시",
+    "type": "관광지",
+    "why": "피너츠 테마 정원, 가을 핑크뮬리 명소",
+    "keywords": [
+      "스누피",
+      "정원",
+      "핑크뮬리"
+    ],
+    "source": "https://says.com/my/lifestyle/travel-lifestyle/snoopy-garden-south-korea"
+  },
+  {
+    "name": "몽탄 제주점",
+    "region": "제주",
+    "city": "제주시",
+    "type": "맛집",
+    "why": "캐치테이블 예약·방문 2년 연속 전국 1위",
+    "keywords": [
+      "우대갈비",
+      "예약",
+      "고기"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "자매국수",
+    "region": "제주",
+    "city": "제주시",
+    "type": "맛집",
+    "why": "2025 웨이팅 전국 상위권 고기국수집",
+    "keywords": [
+      "고기국수",
+      "웨이팅",
+      "제주음식"
+    ],
+    "source": "https://www.unicornfactory.co.kr/article/2025122614170384145"
+  },
+  {
+    "name": "레이지펌프",
+    "region": "제주",
+    "city": "제주시",
+    "type": "카페",
+    "why": "애월 바다를 통창으로 보는 오션뷰 카페",
+    "keywords": [
+      "오션뷰",
+      "애월",
+      "카페"
+    ],
+    "source": "https://hotplacehunter.co.kr/sns/article/77750/"
+  },
+  {
+    "name": "그랜드 조선 제주",
+    "region": "제주",
+    "city": "서귀포시",
+    "type": "숙소",
+    "why": "온수풀 5개와 키즈 객실로 가족여행 인기",
+    "keywords": [
+      "중문",
+      "수영장",
+      "가족"
+    ],
+    "source": "https://kr.trip.com/moments/poi-grand-josun-jeju-101880858"
+  },
+  {
+    "name": "파르나스 호텔 제주",
+    "region": "제주",
+    "city": "서귀포시",
+    "type": "숙소",
+    "why": "110m 인피니티풀, 바다와 가장 가까운 5성",
+    "keywords": [
+      "인피니티풀",
+      "중문",
+      "오션뷰"
+    ],
+    "source": "https://www.ktriptips.com/kor/stay/4081269"
+  }
+]

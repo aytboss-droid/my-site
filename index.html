@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko" data-theme="autumn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>여행? 너가 해!</title>
+  <!-- 휴대폰 홈 화면에 추가했을 때의 아이콘·이름 -->
+  <meta name="theme-color" content="#fbf6ef">
+  <meta name="apple-mobile-web-app-title" content="여행? 너가 해!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <!-- 계절 색 테마를 화면이 그려지기 전에 적용 (깜빡임 방지)
+       저장된 선택이 없거나 '자동'이면 이번 달의 계절 색 -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = JSON.parse(localStorage.getItem('guide.theme')); } catch (e) {}
+      if (t === 'warm') t = 'autumn';
+      if (t === 'fresh') t = 'summer';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(t) === -1) {
+        var m = new Date().getMonth() + 1;
+        t = m >= 3 && m <= 5 ? 'spring' : m >= 6 && m <= 8 ? 'summer' : m >= 9 && m <= 11 ? 'autumn' : 'winter';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      // 휴대폰 상단 상태 표시줄 색을 계절 바탕색에 맞춤
+      var bg = { spring: '#fdf7f8', summer: '#f5fafc', autumn: '#fbf6ef', winter: '#f3f5f9' }[t];
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', bg);
+      // 앱 정보(manifest)는 인터넷에 올렸을 때만 연결 (더블클릭으로 열면 브라우저가 막아서 오류가 남)
+      if (location.protocol === 'http:' || location.protocol === 'https:') {
+        var l = document.createElement('link');
+        l.rel = 'manifest';
+        l.href = 'manifest.webmanifest';
+        document.head.appendChild(l);
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- 머리글 -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#/">
+        <span class="brand-icon" aria-hidden="true">🧳</span>
+        <span id="site-name">여행? 너가 해!</span>
+      </a>
+      <nav class="top-nav" aria-label="주 메뉴">
+        <a href="#/" data-nav="home">홈</a>
+        <a href="#/season" data-nav="season">이달의 추천</a>
+        <a href="#/trip" data-nav="trip">내 여행 <span class="badge" data-fav-count hidden></span></a>
+      </nav>
+      <!-- 계절 색 고르기 -->
+      <div class="theme-wrap">
+        <button class="theme-btn" id="theme-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="theme-menu">
+          <span id="theme-btn-text">🍁 가을</span>
+        </button>
+        <div class="theme-menu" id="theme-menu" hidden></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <!-- ① 홈: 장소 목록 -->
+    <section id="view-home" class="view">
+      <div class="intro">
+        <h1 id="site-tagline">어디로, 누구와 떠나볼까요?</h1>
+        <p class="notice">운영 시간·가격은 방문 전 확인해 주세요</p>
+      </div>
+
+      <!-- 이달의 추천 배너 (app.js가 채움) -->
+      <a id="season-banner" class="season-banner" href="#/season" hidden></a>
+
+      <!-- 검색 + 필터 열기 -->
+      <div class="toolbar">
+        <div class="search">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <label for="search-input" class="sr-only">장소·키워드 검색</label>
+          <input id="search-input" type="search" placeholder="장소·키워드 검색" autocomplete="off" enterkeyhint="search">
+        </div>
+        <button id="filter-toggle" class="filter-toggle" type="button" aria-controls="filter-panel" aria-expanded="false">
+          <span aria-hidden="true">⚙️</span> 필터 <span class="badge" id="filter-badge" hidden></span>
+        </button>
+      </div>
+
+      <!-- 고른 조건 요약 (✕로 하나씩 지우기) -->
+      <div id="active-filters" class="active-filters" hidden></div>
+
+      <!-- 필터 창: 휴대폰에서는 아래에서 올라오는 창, PC에서는 화면에 펼쳐져 있음 -->
+      <div id="filter-backdrop" class="filter-backdrop" hidden></div>
+      <section id="filter-panel" class="filter-panel" aria-label="필터">
+        <div class="panel-head">
+          <h2>필터</h2>
+          <button class="icon-btn" type="button" data-close-filters aria-label="필터 닫기">✕</button>
+        </div>
+        <div id="filters" class="filters"></div>
+        <div class="panel-foot">
+          <button class="btn btn-outline" type="button" data-reset>초기화</button>
+          <button class="btn" type="button" data-close-filters id="filter-apply">결과 보기</button>
+        </div>
+      </section>
+
+      <!-- 요즘 뜨는 곳 (옆으로 넘겨 보는 목록, 조건을 고르지 않았을 때만 보임) -->
+      <section id="hot-row" class="hscroll-sec" aria-labelledby="hot-row-title" hidden>
+        <div class="sec-head">
+          <h2 id="hot-row-title">🔥 요즘 뜨는 곳</h2>
+          <div class="sec-tools">
+            <button class="link-btn" type="button" data-hot-shuffle aria-label="요즘 뜨는 곳 다른 장소로 바꾸기">↻ 다른 곳</button>
+            <button class="link-btn" type="button" data-hot-all>전체 보기</button>
+          </div>
+        </div>
+        <div class="hscroll" id="hot-scroll"></div>
+        <div class="hot-dots" id="hot-dots" role="group" aria-label="요즘 뜨는 곳 화면 고르기"></div>
+      </section>
+
+      <div class="result-bar">
+        <p id="result-count" aria-live="polite"></p>
+        <div class="result-tools">
+          <button id="reset-btn" class="link-btn" type="button" hidden>조건 초기화</button>
+          <label class="sr-only" for="sort-select">정렬</label>
+          <select id="sort-select" class="sort-select">
+            <option value="rec">추천순</option>
+            <option value="near">📍 가까운 순</option>
+            <option value="name">이름순</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+      <div class="more-wrap"><button id="more-btn" class="btn btn-outline more-btn" type="button" hidden>더 보기</button></div>
+
+      <div id="empty" class="empty" hidden>
+        <p class="empty-icon" aria-hidden="true">🔎</p>
+        <p>조건에 맞는 장소가 없어요</p>
+        <button class="btn" type="button" data-reset>조건 초기화</button>
+      </div>
+    </section>
+
+    <!-- ④ 이달의 추천 (app.js가 채움) -->
+    <section id="view-season" class="view" hidden></section>
+
+    <!-- ⑤ 내 여행 > 일정 (app.js가 채움) -->
+    <section id="view-plan" class="view" hidden></section>
+
+    <!-- ③ 내 여행 > 찜 -->
+    <section id="view-saved" class="view" hidden>
+      <div id="saved-tabs"></div>
+      <button class="btn btn-small saved-plan-btn" type="button" id="saved-plan-btn" data-build-favs hidden>🗺️ 찜한 장소로 일정 만들기</button>
+      <div id="saved-grid" class="grid"></div>
+      <div id="saved-empty" class="empty" hidden>
+        <p class="empty-icon" aria-hidden="true">♡</p>
+        <p>마음에 드는 장소에 ♥를 눌러 보세요</p>
+        <a class="btn" href="#/">장소 둘러보기</a>
+      </div>
+    </section>
+
+    <!-- 내 여행 > 점검 기록 (다녀온 뒤 남긴 기록, app.js가 채움) -->
+    <section id="view-checks" class="view" hidden></section>
+
+    <!-- ② 장소 상세 (app.js가 채움) -->
+    <section id="view-place" class="view" hidden></section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p><span data-site-name>여행? 너가 해!</span> · 장소 정보는 방문 전 공식 안내를 확인해 주세요</p>
+  </footer>
+
+  <!-- 휴대폰용 아래쪽 탭 -->
+  <nav class="bottom-nav" aria-label="하단 메뉴">
+    <a href="#/" data-nav="home"><span class="nav-icon" aria-hidden="true">🏠</span>홈</a>
+    <a href="#/season" data-nav="season"><span class="nav-icon" aria-hidden="true">🗓️</span>이달의 추천</a>
+    <a href="#/trip" data-nav="trip">
+      <span class="nav-icon" aria-hidden="true">🧳</span>내 여행
+      <span class="badge" data-fav-count hidden></span>
+    </a>
+  </nav>
+
+  <!-- 일정에 담을 날짜 고르기 -->
+  <dialog id="day-dialog" class="sheet-dialog" aria-labelledby="day-dialog-title">
+    <div class="panel-head">
+      <h2 id="day-dialog-title">몇 일차에 담을까요?</h2>
+      <button class="icon-btn" type="button" data-close-dialog aria-label="닫기">✕</button>
+    </div>
+    <div id="day-dialog-body"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <!-- 관광공사 데이터·요즘 핫플로 만든 장소 (tools/build-places.js가 만듦, 없어도 사이트는 동작) -->
+  <script src="js/places.js" onerror="window.GUIDE_PLACES_EXTRA = []"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
