@@ -22,3 +22,7 @@ desktop.ini
 
 .vercel
 .env*
+
+# 다시 만들 수 있는 큰 자료 (tools/build-more.js, tools/build-photos.js가 만듦)
+tools/kto-list.json
+tools/cache/wiki-*.json

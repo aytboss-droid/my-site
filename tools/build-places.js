@@ -40,8 +40,9 @@ const args = Object.fromEntries(process.argv.slice(2).map(a => {
 const PER_AREA = Number(args.perArea || 2);
 const MAX = Number(args.max || 900);
 const OFFLINE = !!args.offline;
+const IS_MAIN = require.main === module;
 const KEY = process.env.TOUR_API_KEY || args.key || '';
-if (!KEY && !OFFLINE) {
+if (!KEY && !OFFLINE && IS_MAIN) {
   console.error('인증키가 없어요. 먼저 $env:TOUR_API_KEY = "인증키" 를 실행하세요.');
   process.exit(1);
 }
@@ -76,7 +77,7 @@ async function api(base, op, params) {
       await sleep(800 * (attempt + 1));
     }
   }
-  if (/LIMITED_NUMBER_OF_SERVICE_REQUESTS|한도|exceeds/i.test(text)) {
+  if (!text.trim().startsWith('{') && /LIMITED_NUMBER_OF_SERVICE_REQUESTS|한도|exceeds/i.test(text)) {
     stats.limitHit = true;
     throw new LimitError('하루 호출 한도를 넘었어요.');
   }
@@ -282,7 +283,7 @@ function recentMonths(n) {
 }
 
 /* ---------- 실행 ---------- */
-(async function main() {
+async function main() {
   const places = [];
   const seen = new Set();
   const log = [];
@@ -419,4 +420,9 @@ function recentMonths(n) {
   fs.writeFileSync(REPORT, report);
   console.log('\n' + report.split('\n').slice(0, 6).join('\n'));
   console.log('\n→ ' + path.relative(ROOT, OUT) + ' 저장 완료');
-})();
+}
+
+if (IS_MAIN) main();
+module.exports = { api, items, stats, LimitError, clean, firstSentence, norm, slug, regionName, regionFromAddr, regionOfItem, splitGJ, SIDO,
+  decideType, decideThemes, decideEmojis, SKIP_NAME, SKIP_CAT, pickHours, KOR, CACHE };
+

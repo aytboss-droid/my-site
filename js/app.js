@@ -14,7 +14,8 @@
      data.js에 직접 쓴 장소 + js/places.js(관광공사 데이터·요즘 핫플로 만든 장소)를 합침.
      이름이 같으면 직접 쓴 장소를 우선함 */
   (function mergePlaces() {
-    var extra = window.GUIDE_PLACES_EXTRA || [];
+    // places.js(인기 순위·요즘 핫플) 다음에 places-more.js(지역별로 더 넓게 고른 장소)를 이어 붙임
+    var extra = (window.GUIDE_PLACES_EXTRA || []).concat(window.GUIDE_PLACES_MORE || []);
     var norm = function (s) { return String(s || '').replace(/[\s()·\-]/g, '').toLowerCase(); };
     var seenName = {}, seenId = {};
     D.PLACES.forEach(function (p) { seenName[norm(p.name) + '|' + p.region] = 1; seenId[p.id] = 1; p.curated = true; });
@@ -24,10 +25,22 @@
       seenName[key] = 1; seenId[p.id] = 1;
       D.PLACES.push(p);
     });
+    // 사진이 없는 장소에 js/photos.js의 사진 붙이기 (관광공사·위키미디어 공용, tools/build-photos.js가 만듦)
+    var photos = window.GUIDE_PHOTOS || {};
+    D.PLACES.forEach(function (p) {
+      if (p.images && p.images.length) return;
+      var ph = photos[String(p.name).replace(/\s+/g, '') + '|' + p.region];
+      if (!ph || !ph.images || !ph.images.length) return;
+      p.images = ph.images.slice();
+      p.credit = ph.credit;
+      if (ph.creditUrl) p.creditUrl = ph.creditUrl;
+    });
     // 기본 순서: 직접 고른 곳 → 요즘 핫플 → 인기 순위 높은 곳
     D.PLACES.forEach(function (p, i) { p._order = i; });
     D.PLACES.sort(function (a, b) {
-      var sa = a.curated ? 0 : a.hot ? 1 : 2, sb = b.curated ? 0 : b.hot ? 1 : 2;
+      // 사진이 있는 곳을 먼저 (사진이 아직 없는 곳은 그림으로 보이니 뒤로)
+      var hasImg = function (p) { return p.images && p.images.length ? 0 : 3; };
+      var sa = (a.curated ? 0 : a.hot ? 1 : 2) + hasImg(a), sb = (b.curated ? 0 : b.hot ? 1 : 2) + hasImg(b);
       if (sa !== sb) return sa - sb;
       return (a.rank || 999) - (b.rank || 999) || a._order - b._order;
     });
@@ -583,7 +596,12 @@
         '<button class="back-btn" type="button" data-back>← 목록으로</button>' +
         '<div class="gallery"><div class="slides">' + slides + '</div>' +
           (count > 1 ? '<div class="dots">' + dots + '</div>' : '') + '</div>' +
-        (p.credit && p.images && p.images.length ? '<p class="photo-credit">사진 · ' + esc(p.credit) + '</p>' : '') +
+        (p.credit && p.images && p.images.length
+          ? '<p class="photo-credit">사진 · ' +
+            (p.creditUrl && /^https:\/\//.test(p.creditUrl)
+              ? '<a href="' + esc(p.creditUrl) + '" target="_blank" rel="noopener">' + esc(p.credit) + ' ↗</a>'
+              : esc(p.credit)) + '</p>'
+          : '') +
         '<header class="detail-head">' +
           '<span class="type-badge">' + esc(t.icon) + ' ' + esc(p.type) + '</span>' +
           '<h1>' + esc(p.name) + '</h1>' +
