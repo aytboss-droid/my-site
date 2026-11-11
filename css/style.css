@@ -1170,3 +1170,23 @@ a.chip { display: inline-flex; align-items: center; text-decoration: none; }
 .ai-tip-note { margin: 10px 0 0; font-size: 0.8rem; }
 .ai-tip-msg { margin: 10px 0 0; color: var(--text); }
 .ai-tip-text { line-height: 1.7; font-size: 0.95rem; overflow-wrap: anywhere; }
+
+/* ---------- AI 기능 (PRD Phase 3): 일정 요약·말로 요청하는 코스 ---------- */
+.ai-badge {
+  display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 999px; vertical-align: middle;
+  background: var(--accent-strong); color: #fff; font-size: 0.72rem; font-weight: 700;
+}
+.ai-sum, .ai-course {
+  margin: 14px 0; padding: 14px 16px; border-radius: 16px;
+  background: var(--accent-soft); border: 1px solid var(--line);
+}
+.ai-sum h3, .ai-course h3 { margin: 0 0 8px; font-size: 1rem; }
+.ai-sum ul { margin: 0; padding-left: 1.2em; line-height: 1.7; }
+.ai-pack { margin: 8px 0 0; font-size: 0.92rem; }
+.ai-note { margin: 8px 0 0; color: var(--muted); font-size: 0.8rem; }
+.ai-course-input {
+  display: block; width: 100%; box-sizing: border-box; margin: 6px 0 10px; padding: 10px 12px;
+  border: 1.5px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text);
+  font: inherit; resize: vertical;
+}
+.ai-course-input:focus { outline: 3px solid var(--accent); outline-offset: 1px; }

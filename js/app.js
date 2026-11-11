@@ -992,6 +992,152 @@
     if (plan && planCount()) confirmReplace('지금 일정을 맞춤 코스로 바꿀까요?', go); else go();
   }
 
+  /* ---------- AI 기능 (PRD Phase 3, Gemini) ----------
+     브라우저는 Gemini를 직접 부르지 않고 Vercel 서버 함수 /api/ai 를 부름 (키는 서버 환경 변수에만 있음)
+     로그인한 사람만, 하루 20회 (서버가 확인) */
+  var aiBusy = false;
+  var aiCourseText = '';
+
+  function aiCall(body) {
+    var sb = window.GUIDE_SB;
+    if (!sb) return Promise.reject(new Error('로그인 기능을 불러오지 못했어요. 새로고침해 주세요'));
+    return sb.auth.getSession().then(function (res) {
+      var s = res && res.data && res.data.session;
+      if (!s) { var e = new Error('로그인한 사람만 쓸 수 있어요. 내 여행 화면 아래에서 로그인해 주세요'); e.login = true; throw e; }
+      return fetch('/api/ai', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + s.access_token },
+        body: JSON.stringify(body)
+      });
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) throw new Error(j.error || 'AI가 지금 답하지 못했어요');
+        return j;
+      });
+    });
+  }
+  function aiLeftText(j) { return typeof j.left === 'number' ? ' (오늘 남은 AI 사용 ' + j.left + '회)' : ''; }
+
+  // P3-02 일정 요약: 장소·날짜가 같으면 다시 부르지 않음
+  function aiKey(p) {
+    return JSON.stringify([p.startDate || '', p.endDate || '', p.days.map(function (d) { return d.items.map(function (it) { return it.id; }); })]);
+  }
+  function aiSummaryValid() { return !!(plan && plan.ai && plan.ai.key === aiKey(plan)); }
+  function aiSummaryHTML() {
+    if (!aiSummaryValid()) return '';
+    return '<section class="ai-sum" aria-label="AI 일정 요약">' +
+      '<h3>✨ AI 일정 요약 <span class="ai-badge">AI가 쓴 초안</span></h3>' +
+      '<ul>' + plan.ai.summary.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>' +
+      (plan.ai.packing.length ? '<p class="ai-pack">🎒 챙길 것: ' + esc(plan.ai.packing.join(', ')) + '</p>' : '') +
+      '<p class="ai-note">공유하기를 누르면 이 요약이 함께 붙어요. 운영 시간·가격은 방문 전 확인해 주세요.</p>' +
+    '</section>';
+  }
+  function aiSummarize() {
+    if (aiBusy || !plan || !planCount()) { if (!planCount()) toast('일정에 장소를 먼저 담아 주세요'); return; }
+    aiBusy = true; renderPlan();
+    var key = aiKey(plan);
+    aiCall({
+      action: 'summary', title: plan.title, startDate: plan.startDate || '', endDate: plan.endDate || '',
+      days: plan.days.map(function (d) {
+        return d.items.map(function (it) { var p = findPlace(it.id); return p ? { name: p.name, type: p.type, region: p.region } : null; }).filter(Boolean);
+      })
+    }).then(function (j) {
+      if (plan && aiKey(plan) === key) { plan.ai = { key: key, summary: j.summary || [], packing: j.packing || [] }; savePlan(); }
+      toast('AI 요약을 만들었어요' + aiLeftText(j));
+    }).catch(function (e) { toast(e.message); })
+      .then(function () { aiBusy = false; if (location.hash === '#/plan') renderPlan(); });
+  }
+  function aiShareText() {
+    if (!aiSummaryValid()) return '';
+    return '\n\n' + plan.ai.summary.join('\n') +
+      (plan.ai.packing.length ? '\n🎒 챙길 것: ' + plan.ai.packing.join(', ') : '') + '\n(AI가 쓴 요약)';
+  }
+
+  // P3-01 말로 요청하는 맞춤 코스: ① AI가 요청을 조건으로 풀고 ② 사이트 장소 후보 중에서만 고름
+  function aiCourseHTML() {
+    return '<section class="ai-course" aria-label="말로 요청하는 AI 코스">' +
+      '<h3>🗣️ 말로 요청하면 AI가 코스를 짜요 <span class="ai-badge">AI</span></h3>' +
+      '<p class="builder-desc">예: "아이랑 비 오는 토요일 서울 하루 코스 짜줘", "1박 2일 경주 역사 여행, 실내 위주로"</p>' +
+      '<label class="sr-only" for="ai-course-text">원하는 여행</label>' +
+      '<textarea id="ai-course-text" class="ai-course-input" rows="2" maxlength="300" placeholder="어떤 여행을 원하세요?">' + esc(aiCourseText) + '</textarea>' +
+      '<button class="btn builder-make" type="button" data-ai-course' + (aiBusy ? ' disabled' : '') + '>' +
+        (aiBusy ? 'AI가 코스를 짜는 중…' : '✨ AI에게 코스 부탁하기') + '</button>' +
+      '<p class="ai-note">로그인한 사람만 쓸 수 있어요 · 사이트에 있는 장소로만 짜요 · 하루 20회</p>' +
+    '</section>';
+  }
+  function aiCandidates(cond, start, n) {
+    var month = parseDate(start).getMonth() + 1;
+    var rec = (D.MONTHLY || []).filter(function (m) { return m.month === month; })[0];
+    var recIds = rec ? rec.places : [], recRegions = rec ? rec.regions.map(function (r) { return r.name; }) : [];
+    var ok = function (p) {
+      if (p.lat == null || isLodging(p) || cond.regions.indexOf(p.region) === -1) return false;
+      for (var i = 0; i < n; i++) if (!closedWarning(p, addDays(start, i))) return true; // 여행 중 하루라도 여는 곳
+      return false;
+    };
+    var sc = function (p) {
+      var themeHit = cond.themes.filter(function (t) { return (p.themes || []).indexOf(t) !== -1; }).length;
+      return tripScore(p, recIds, recRegions) + themeHit * 4;
+    };
+    var all = D.PLACES.filter(ok).sort(function (a, b) { return sc(b) - sc(a); });
+    // 종류가 고르게 들어가도록: 관광지 위주 + 맛집·카페 몇 곳
+    var sights = all.filter(function (p) { return p.type === '관광지'; }).slice(0, 60);
+    var food = all.filter(function (p) { return p.type !== '관광지'; }).slice(0, 25);
+    return sights.concat(food);
+  }
+  function aiMakeCourse() {
+    if (aiBusy) return;
+    var ta = document.getElementById('ai-course-text');
+    aiCourseText = ta ? ta.value.trim() : '';
+    if (aiCourseText.length < 4) { toast('어떤 여행을 원하는지 적어 주세요'); if (ta) ta.focus(); return; }
+    var text = aiCourseText, cond, start, n, cands;
+    aiBusy = true; renderPlan();
+    aiCall({ action: 'course_parse', text: text, today: toISO(new Date()) }).then(function (c) {
+      cond = c;
+      if (!cond.regions || !cond.regions.length) throw new Error('어느 지역으로 갈지 함께 적어 주세요 (예: 서울, 경주, 제주)');
+      n = cond.days || 1;
+      start = cond.start || nextSaturday();
+      cands = aiCandidates(cond, start, n);
+      if (cands.length < 3) throw new Error('그 지역에는 고를 장소가 부족해요. 지역을 바꿔 보세요');
+      return aiCall({
+        action: 'course_pick', text: text + (cond.indoor ? ' (실내 위주)' : '') + (cond.notes ? ' / ' + cond.notes : ''), days: n,
+        candidates: cands.map(function (p) {
+          return { id: p.id, name: p.name, type: p.type, region: p.region, themes: p.themes || [], summary: p.summary || '' };
+        })
+      });
+    }).then(function (j) {
+      // 서버가 걸렀어도 한 번 더: 사이트에 없는 장소·후보가 아닌 장소는 버림
+      var okIds = {};
+      cands.forEach(function (p) { okIds[p.id] = 1; });
+      var used = {};
+      var days = (j.days || []).slice(0, n).map(function (ids, d) {
+        var picks = (ids || []).filter(function (id) { var ok = okIds[id] && findPlace(id) && !used[id]; if (ok) used[id] = 1; return ok; })
+          .map(findPlace);
+        var date = addDays(start, d);
+        picks = picks.filter(function (p) { return !closedWarning(p, date); });
+        if (picks.length && d < n - 1) { // 마지막 날이 아니면 첫 장소 가까운 숙소
+          var lodge = D.PLACES.filter(function (p) { return isLodging(p) && p.region === picks[0].region && p.lat != null; })
+            .sort(function (a, b) { return (distKm(picks[0], a) || 999) - (distKm(picks[0], b) || 999); })[0];
+          if (lodge) picks.push(lodge);
+        }
+        return { start: '09:00', items: autoOrder(picks.map(function (p) { return makeItem(p.id); }), '09:00') };
+      });
+      while (days.length < n) days.push({ start: '09:00', items: [] });
+      if (!days.some(function (d) { return d.items.length; })) throw new Error('AI가 고른 장소가 없어요. 조건을 바꿔 보세요');
+      var p = {
+        source: 'ai', title: j.title || (cond.regions.join('·') + ' ' + nightsText(n) + ' AI 코스'),
+        request: text, startDate: start, endDate: addDays(start, n - 1), days: days
+      };
+      p.origIds = planIds(p);
+      aiBusy = false;
+      var go = function () {
+        plan = p; planEdit = false; planCheck = false; savePlan(); goPlan();
+        toast('AI가 코스를 짰어요' + aiLeftText(j) + (cond.start ? '' : ' · 날짜는 다음 토요일로 정했어요'));
+      };
+      if (plan && planCount()) confirmReplace('지금 일정을 AI 코스로 바꿀까요?', go); else go();
+    }).catch(function (e) { toast(e.message); })
+      .then(function () { aiBusy = false; if (location.hash === '#/plan') renderPlan(); });
+  }
+
   function datesCardHTML() {
     var has = !!plan.startDate, today = toISO(new Date());
     var month = has ? parseDate(plan.startDate).getMonth() + 1 : 0;
@@ -1508,6 +1654,7 @@
     return tripTabsHTML('plan') +
       '<p class="plan-intro">날짜·지역에 맞춘 코스, 찜한 장소, 추천 코스로 동선과 시간표를 자동으로 만들어 드려요.</p>' +
       savedListHTML() +
+      aiCourseHTML() +
       builderHTML(true) +
       '<section class="choice-card"><h2>🗓️ 날짜부터 정하기</h2>' +
         '<p>가는 날과 오는 날을 먼저 정하고, 마음에 드는 장소를 날짜별로 하나씩 담아요.</p>' +
@@ -1530,7 +1677,9 @@
     var source = plan.source === 'course' ? '🧭 추천 코스로 만든 일정'
       : plan.source === 'shared' ? '🔗 공유받은 일정'
       : plan.source === 'custom' ? '✍️ 직접 담은 일정'
-      : plan.source === 'auto' ? '✨ 날짜·지역 맞춤 코스' : '♥ 찜 목록으로 만든 일정';
+      : plan.source === 'auto' ? '✨ 날짜·지역 맞춤 코스'
+      : plan.source === 'ai' ? '🗣️ 말로 요청한 AI 코스' + (plan.request ? ' · "' + plan.request.slice(0, 40) + '"' : '')
+      : '♥ 찜 목록으로 만든 일정';
     view.innerHTML =
       tripTabsHTML('plan') +
       '<div class="plan-top"><div>' +
@@ -1543,6 +1692,8 @@
         '<button class="btn btn-small' + (planCheck ? '' : ' btn-outline') + '" type="button" data-plan-check aria-pressed="' + planCheck + '">' +
           (planCheck ? '✓ 점검 완료' : '🧾 점검') + '</button>' +
         '<button class="btn btn-small" type="button" data-plan-save>💾 보관하기</button>' +
+        '<button class="btn btn-small btn-outline" type="button" data-ai-summary' + (aiBusy ? ' disabled' : '') + '>' +
+          (aiBusy ? 'AI가 쓰는 중…' : aiSummaryValid() ? '✨ AI 요약 다시' : '✨ AI 요약') + '</button>' +
         '<button class="btn btn-small btn-outline" type="button" data-plan-share>↗ 공유하기</button>' +
         '<button class="btn btn-small btn-outline" type="button" data-plan-print>🖨️ 인쇄하기</button>' +
         '<button class="btn btn-small btn-outline" type="button" data-plan-new>새로 만들기</button>' +
@@ -1552,6 +1703,7 @@
         : planCheck ? ''
         : '<p class="plan-note">이동 거리와 시간은 직선거리로 계산한 예상치예요. 정확한 경로와 시간은 [길찾기]에서 확인하세요.</p>') +
       (planCheck ? checkSummaryHTML() : checkPromptHTML()) +
+      aiSummaryHTML() +
       datesCardHTML() +
       plan.days.map(dayHTML).join('') +
       savedListHTML();
@@ -1566,6 +1718,8 @@
       setPlan(fp, null, function () { goPlan(); toast('찜한 장소로 일정을 만들었어요'); });
       return true;
     }
+    if (target.closest('[data-ai-summary]')) { aiSummarize(); return true; }
+    if (target.closest('[data-ai-course]')) { aiMakeCourse(); return true; }
     if ((el = target.closest('[data-build-course]'))) {
       setPlan(buildFromCourse(el.dataset.buildCourse), null, function () { goPlan(); toast('추천 코스로 일정을 만들었어요'); });
       return true;
@@ -1708,7 +1862,8 @@
         title: plan.title,
         text: plan.title + (plan.startDate
           ? ' (' + fmtDate(plan.startDate) + ' ~ ' + fmtDate(plan.endDate) + ', ' + nightsText(tripLength()) + ')'
-          : ' (' + plan.days.length + '일 일정)'),
+          : ' (' + plan.days.length + '일 일정)') + aiShareText(),
+        withText: aiSummaryValid(),
         url: location.href.split('#')[0] + '#/plan/s/' + encodeURIComponent(encodePlan(plan)) + '/' + encodeURIComponent(plan.title)
       });
       return true;
@@ -2039,8 +2194,10 @@
     var isMobile = window.matchMedia('(pointer: coarse)').matches;
 
     function fallback() {
-      copyText(data.url).then(function (ok) {
-        toast(ok ? '링크가 복사되었습니다' : '링크를 복사하지 못했어요');
+      // withText: 일정 공유처럼 글(AI 요약 등)도 함께 보내야 할 때는 글 + 링크를 복사
+      var copy = data.withText ? data.text + '\n' + data.url : data.url;
+      copyText(copy).then(function (ok) {
+        toast(ok ? (data.withText ? '일정 소개와 링크가 복사되었습니다' : '링크가 복사되었습니다') : '링크를 복사하지 못했어요');
       });
     }
     // 휴대폰: 카카오톡·문자 등 공유 창 / PC: 링크 복사

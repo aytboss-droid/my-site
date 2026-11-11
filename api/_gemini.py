@@ -55,3 +55,22 @@ def generate(prompt, model=None):
     _, default_model = get_config()
     res = get_client().models.generate_content(model=model or default_model, contents=prompt)
     return res.text
+
+
+def generate_json(prompt, model=None):
+    """JSON으로만 답하게 하고, 읽은 결과(dict/list)를 돌려줌. 못 읽으면 None"""
+    import json
+
+    _, default_model = get_config()
+    res = get_client().models.generate_content(
+        model=model or default_model,
+        contents=prompt,
+        config={"response_mime_type": "application/json", "temperature": 0.4},
+    )
+    text = (res.text or "").strip()
+    if text.startswith("```"):
+        text = text.strip("`").split("\n", 1)[-1]
+    try:
+        return json.loads(text)
+    except ValueError:
+        return None

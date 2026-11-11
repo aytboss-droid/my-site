@@ -1,44 +1,22 @@
 """POST /api/travel_tip : 장소 하나에 대한 AI 여행 팁 (Gemini)
 
-- 로그인한 사람만: 브라우저가 보낸 Supabase 로그인 토큰을 Supabase에 물어 확인
+- 로그인한 사람만, AI 하루 사용량(20회)에 함께 셈 (api/_auth.py)
 - 보내는 내용: {"name", "region", "type", "address", "summary"} (길이 제한 있음)
-- 돌려주는 내용: {"tip": "..."} 또는 {"error": "..."}
+- 돌려주는 내용: {"tip": "...", "left": 남은 횟수} 또는 {"error": "..."}
 - Gemini 키·모델은 _gemini.py가 환경 변수(GEMINI_API_KEY, GEMINI_MODEL)에서 읽음
 """
-import json
 import os
 import sys
-import urllib.error
-import urllib.request
 from http.server import BaseHTTPRequestHandler
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _auth  # noqa: E402
 import _gemini  # noqa: E402
-
-# 공개 값 (브라우저 js/supabase-config.js와 같음). 환경 변수가 있으면 그걸 씀
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://tcjhxbfveyfnswiqokpr.supabase.co")
-SUPABASE_PUBLISHABLE_KEY = os.getenv("SUPABASE_PUBLISHABLE_KEY", "sb_publishable_F7JuTGy1OoAUbvrGvjeg-Q_O16Ed-xJ")
 
 REGIONS = {"서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원",
            "충북", "충남", "전북", "전남", "경북", "경남", "제주"}
 TYPES = {"관광지", "맛집", "카페", "숙소"}
 MAX_BODY = 4000
-
-
-def check_user(auth_header):
-    """Supabase 로그인 토큰이 진짜인지 확인. 맞으면 사용자 id, 아니면 None"""
-    if not auth_header or not auth_header.startswith("Bearer "):
-        return None
-    req = urllib.request.Request(
-        SUPABASE_URL + "/auth/v1/user",
-        headers={"apikey": SUPABASE_PUBLISHABLE_KEY, "Authorization": auth_header},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=8) as res:
-            data = json.loads(res.read().decode("utf-8"))
-            return data.get("id")
-    except (urllib.error.URLError, ValueError, TimeoutError):
-        return None
 
 
 def clean(value, limit):
@@ -64,29 +42,14 @@ def tip_for(place):
 
 
 class handler(BaseHTTPRequestHandler):
-    def _send(self, status, payload):
-        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-        self.send_response(status)
-        self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Cache-Control", "no-store")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
-
     def do_GET(self):
-        self._send(405, {"error": "POST로 보내 주세요"})
+        _auth.send_json(self, 405, {"error": "POST로 보내 주세요"})
 
     def do_POST(self):
-        if not check_user(self.headers.get("Authorization")):
-            return self._send(401, {"error": "로그인한 사람만 쓸 수 있어요"})
-        try:
-            size = int(self.headers.get("Content-Length") or 0)
-            if size <= 0 or size > MAX_BODY:
-                raise ValueError
-            body = json.loads(self.rfile.read(size).decode("utf-8"))
-        except (ValueError, UnicodeDecodeError):
-            return self._send(400, {"error": "보낸 내용을 읽지 못했어요"})
-
+        # 내용을 먼저 확인해서, 잘못된 요청은 사용량을 깎지 않음
+        body = _auth.read_json(self, MAX_BODY)
+        if body is None:
+            return _auth.send_json(self, 400, {"error": "보낸 내용을 읽지 못했어요"})
         place = {
             "name": clean(body.get("name"), 60),
             "region": clean(body.get("region"), 4),
@@ -95,14 +58,16 @@ class handler(BaseHTTPRequestHandler):
             "summary": clean(body.get("summary"), 200),
         }
         if not place["name"] or place["region"] not in REGIONS or place["type"] not in TYPES:
-            return self._send(400, {"error": "장소 정보가 올바르지 않아요"})
-
+            return _auth.send_json(self, 400, {"error": "장소 정보가 올바르지 않아요"})
+        left = _auth.guard(self)  # 로그인 확인 + 하루 사용량 차감
+        if left is None:
+            return
         try:
             tip = tip_for(place)
         except _gemini.GeminiConfigError:
-            return self._send(500, {"error": "AI 설정이 아직 안 돼 있어요"})
+            return _auth.send_json(self, 500, {"error": "AI 설정이 아직 안 돼 있어요"})
         except Exception:  # Gemini 쪽 오류·사용량 초과 등
-            return self._send(502, {"error": "AI가 지금 답하지 못했어요. 잠시 뒤에 다시 해 주세요"})
+            return _auth.send_json(self, 502, {"error": "AI가 지금 답하지 못했어요. 잠시 뒤에 다시 해 주세요"})
         if not tip:
-            return self._send(502, {"error": "AI가 답을 만들지 못했어요"})
-        return self._send(200, {"tip": tip})
+            return _auth.send_json(self, 502, {"error": "AI가 답을 만들지 못했어요"})
+        return _auth.send_json(self, 200, {"tip": tip, "left": left})
