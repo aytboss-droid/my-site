@@ -11,6 +11,8 @@
         - 인증키: $env:TOUR_API_KEY (없으면 저장해 둔 응답만 씀)
         - tools/build-places.js 와 같은 cache 폴더·같은 저장 방식을 써서, 이미 받은 검색은 다시 부르지 않음
      2) 위키백과(한국어) 문서의 대표 사진 = 위키미디어 공용의 자유 이용 사진
+     3) 위키데이터 항목의 대표 사진(별칭으로 검색, 위치 확인)
+     4) 위키미디어 공용 위치 검색: 장소 400m 안에서 찍혔고 파일 이름에 장소 이름이 든 사진 (관광지만)
         - 작가·이용 조건(CC BY-SA 등)을 함께 저장해서 사이트에 출처로 표시함
      블로그·SNS 사진은 저작권 때문에 쓰지 않음.
 
@@ -39,7 +41,7 @@ const UA = 'TravelGuidePhotoTool/1.0 (personal non-commercial travel site)';
 
 fs.mkdirSync(CACHE, { recursive: true });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const stats = { kto: 0, wiki: 0, none: 0, calls: 0, cached: 0, limitHit: false };
+const stats = { kto: 0, wiki: 0, wikidata: 0, commons: 0, none: 0, calls: 0, cached: 0, limitHit: false };
 
 /* ---------- 장소 목록 읽기 (data.js + places.js) ---------- */
 function loadPlaces() {
@@ -175,17 +177,23 @@ async function wikiGet(host, params) {
   const file = path.join(CACHE, 'wiki-' + crypto.createHash('md5').update(url).digest('hex') + '.json');
   if (fs.existsSync(file)) { stats.cached++; return JSON.parse(fs.readFileSync(file, 'utf8')); }
   let json = null;
-  for (let i = 0; i < 3; i++) {
+  // 위키데이터는 요청이 잦으면 "too many requests" 글자로 거절함 → 오래 쉬었다가 다시
+  const slow = host.indexOf('wikidata') !== -1;
+  for (let i = 0; i < 5; i++) {
     try {
       stats.calls++;
       const res = await fetch(url, { headers: { 'User-Agent': UA } });
-      if (res.status === 429) { await sleep(3000 * (i + 1)); continue; }
-      json = await res.json();
+      const text = await res.text();
+      if (res.status === 429 || /too many requests/i.test(text.slice(0, 200))) {
+        console.log('  (요청이 많다고 해서 ' + 15 * (i + 1) + '초 쉬어요)');
+        await sleep(15000 * (i + 1)); continue;
+      }
+      json = JSON.parse(text);
       break;
-    } catch (e) { await sleep(1000 * (i + 1)); }
+    } catch (e) { await sleep(2000 * (i + 1)); }
   }
-  if (json) fs.writeFileSync(file, JSON.stringify(json));
-  await sleep(120);
+  if (json && !json.error) fs.writeFileSync(file, JSON.stringify(json));
+  await sleep(slow ? 1100 : 300);
   return json;
 }
 const stripHtml = s => String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -228,22 +236,105 @@ async function fromWiki(p) {
       return x.exact <= 1;
     }).sort((a, b) => a.exact - b.exact || (a.d || 0) - (b.d || 0))[0];
     if (!pick) continue;
-    const f = await wikiGet('commons.wikimedia.org', {
-      action: 'query', titles: 'File:' + pick.pg.pageimage, prop: 'imageinfo',
-      iiprop: 'url|extmetadata', iiurlwidth: '800'
+    const rec = await commonsImage(pick.pg.pageimage, pick.pg.title, 'wiki');
+    if (rec) return rec;
+  }
+  return null;
+}
+
+// 위키미디어 공용 파일 하나 → 사진 기록 (자유 이용 사진만, 작가·이용 조건 함께)
+async function commonsImage(file, page, source) {
+  file = String(file).replace(/^File:/, '');
+  if (BAD_FILE.test(file)) return null;
+  const f = await wikiGet('commons.wikimedia.org', {
+    action: 'query', titles: 'File:' + file, prop: 'imageinfo',
+    iiprop: 'url|extmetadata', iiurlwidth: '800'
+  });
+  const pg = f && f.query && f.query.pages && f.query.pages[0];
+  const info = pg && pg.imageinfo && pg.imageinfo[0];
+  if (!info || !info.thumburl) return null;
+  const meta = info.extmetadata || {};
+  const license = stripHtml(meta.LicenseShortName && meta.LicenseShortName.value) || '';
+  if (!license || /non-free|fair use/i.test(license) || (meta.NonFree && meta.NonFree.value)) return null;
+  const artist = stripHtml(meta.Artist && meta.Artist.value).slice(0, 60) || '작가 미상';
+  return {
+    images: [info.thumburl], source: source, page: page,
+    credit: '위키미디어 공용 · ' + artist + ' · ' + license,
+    creditUrl: info.descriptionurl
+  };
+}
+
+/* ---------- 위키데이터 (대표 사진 P18 + 위치 P625) ----------
+   위키백과 문서 제목과 이름이 달라도(예: 남산서울타워 ↔ N서울타워) 별칭으로 찾을 수 있음.
+   위치가 가까운 항목만 씀 (관광지 3km, 맛집·카페·숙소 0.5km) */
+// 시도의 대략 가운데·반경(km): 좌표가 없는 장소는 위키데이터 위치가 그 시도 안쪽인지로만 확인
+const REGION_AREA = {
+  '서울': [37.56, 126.98, 25], '부산': [35.18, 129.07, 30], '대구': [35.87, 128.60, 30], '인천': [37.46, 126.50, 45],
+  '광주': [35.16, 126.85, 20], '대전': [36.35, 127.38, 20], '울산': [35.54, 129.31, 30], '세종': [36.56, 127.26, 20],
+  '경기': [37.40, 127.20, 90], '강원': [37.75, 128.30, 130], '충북': [36.75, 127.65, 80], '충남': [36.55, 126.85, 90],
+  '전북': [35.72, 127.10, 80], '전남': [34.85, 126.90, 120], '경북': [36.35, 128.75, 130], '경남': [35.30, 128.25, 100],
+  '제주': [33.40, 126.55, 50]
+};
+async function fromWikidata(p) {
+  const area = REGION_AREA[p.region];
+  // 좌표가 없으면 관광지만 (이름이 겹치는 가게가 많아서)
+  if (p.lat == null && (p.type !== '관광지' || !area)) return null;
+  const maxKm = p.lat == null ? area[2] : p.type === '관광지' ? 3 : 0.5;
+  const at = p.lat == null ? { lat: area[0], lng: area[1] } : p;
+  const full = norm(p.name);
+  for (const kw of keywordsOf(p)) {
+    const core = norm(kw);
+    if (core !== full && (core.length < 3 || GENERIC.test(kw.trim()))) continue;
+    const s = await wikiGet('www.wikidata.org', {
+      action: 'wbsearchentities', search: kw, language: 'ko', uselang: 'ko', type: 'item', limit: '7'
     });
-    const page = f && f.query && f.query.pages && f.query.pages[0];
-    const info = page && page.imageinfo && page.imageinfo[0];
-    if (!info || !info.thumburl) continue;
-    const meta = info.extmetadata || {};
-    const license = stripHtml(meta.LicenseShortName && meta.LicenseShortName.value) || '';
-    if (/non-free|fair use/i.test(license) || (meta.NonFree && meta.NonFree.value)) continue;
-    const artist = stripHtml(meta.Artist && meta.Artist.value).slice(0, 60) || '작가 미상';
-    return {
-      images: [info.thumburl], source: 'wiki', page: pick.pg.title,
-      credit: '위키미디어 공용 · ' + artist + (license ? ' · ' + license : ''),
-      creditUrl: info.descriptionurl
-    };
+    const ids = ((s && s.search) || []).filter(r => {
+      const t = norm((r.match && r.match.text) || r.label);
+      return t === full || t === core;
+    }).map(r => r.id);
+    if (!ids.length) continue;
+    const e = await wikiGet('www.wikidata.org', { action: 'wbgetentities', ids: ids.join('|'), props: 'claims|sitelinks' });
+    const ents = (e && e.entities) || {};
+    const cands = ids.map(id => {
+      const c = (ents[id] && ents[id].claims) || {};
+      const sl = (ents[id] && ents[id].sitelinks) || {};
+      const img = c.P18 && c.P18[0] && c.P18[0].mainsnak.datavalue && c.P18[0].mainsnak.datavalue.value;
+      const co = c.P625 && c.P625[0] && c.P625[0].mainsnak.datavalue && c.P625[0].mainsnak.datavalue.value;
+      const d = co ? distKm(at, { lat: co.latitude, lng: co.longitude }) : null;
+      const wiki = (sl.kowiki && ['ko.wikipedia.org', sl.kowiki.title]) || (sl.enwiki && ['en.wikipedia.org', sl.enwiki.title]) || null;
+      return { id, img, d, wiki };
+    }).filter(x => (x.img || x.wiki) && x.d !== null && x.d < maxKm).sort((a, b) => a.d - b.d);
+    for (const c of cands) {
+      let rec = c.img ? await commonsImage(c.img, 'wikidata:' + c.id, 'wikidata') : null;
+      // 위키데이터에 대표 사진이 없으면 연결된 위키백과 문서의 대표 사진 (예: N서울타워)
+      if (!rec && c.wiki) {
+        const w = await wikiGet(c.wiki[0], { action: 'query', titles: c.wiki[1], prop: 'pageimages', piprop: 'name' });
+        const pg = w && w.query && w.query.pages && w.query.pages[0];
+        if (pg && pg.pageimage) rec = await commonsImage(pg.pageimage, 'wikidata:' + c.id + ' → ' + c.wiki[1], 'wikidata');
+      }
+      if (rec) return rec;
+    }
+  }
+  return null;
+}
+
+/* ---------- 위키미디어 공용 위치 검색 (관광지만) ----------
+   장소 좌표 400m 안에서 찍힌 사진 중, 파일 이름에 장소 이름이 들어 있는 것 */
+async function fromCommonsGeo(p) {
+  if (p.lat == null || p.type !== '관광지') return null;
+  const names = keywordsOf(p).map(norm).filter(n => n.length >= 3 && !GENERIC.test(n));
+  if (!names.length) return null;
+  const j = await wikiGet('commons.wikimedia.org', {
+    action: 'query', list: 'geosearch', gsnamespace: '6',
+    gscoord: p.lat + '|' + p.lng, gsradius: '400', gslimit: '100'
+  });
+  const hits = ((j && j.query && j.query.geosearch) || [])
+    .filter(g => /\.jpe?g$/i.test(g.title) && !BAD_FILE.test(g.title))
+    .filter(g => { const t = norm(g.title); return names.some(n => t.includes(n)); })
+    .sort((a, b) => a.dist - b.dist);
+  for (const g of hits.slice(0, 3)) {
+    const rec = await commonsImage(g.title, g.title, 'commons');
+    if (rec) return rec;
   }
   return null;
 }
@@ -266,7 +357,9 @@ async function fromWiki(p) {
     } catch (e) {
       if (!(e instanceof LimitError)) throw e;
     }
-    if (!found) found = prev && prev.source === 'wiki' && !args.recheck ? prev : await fromWiki(p);
+    if (!found) found = prev && prev.source !== 'kto' && !args.recheck ? prev : await fromWiki(p);
+    if (!found) found = await fromWikidata(p);
+    if (!found) found = await fromCommonsGeo(p);
     if (found) { store[k] = found; stats[found.source]++; } else { delete store[k]; stats.none++; }
     if (++n % 50 === 0) console.log('  ' + n + '/' + todo.length + ' (관광공사 ' + stats.kto + ', 위키 ' + stats.wiki + ')');
   }
@@ -284,6 +377,9 @@ async function fromWiki(p) {
     '   출처: 한국관광공사, 위키미디어 공용(자유 이용 사진, 작가·이용 조건 표시)\n' +
     '   만든 날: ' + new Date().toISOString().slice(0, 10) + ' / ' + Object.keys(out).length + '곳 */\n' +
     'window.GUIDE_PHOTOS = ' + JSON.stringify(out) + ';\n');
-  console.log('\n사진 찾음: 관광공사 ' + stats.kto + '곳, 위키미디어 ' + stats.wiki + '곳 / 못 찾음 ' + stats.none + '곳');
+  console.log('\n사진 찾음: 관광공사 ' + stats.kto + '곳, 위키백과 ' + stats.wiki + '곳, 위키데이터 ' + stats.wikidata + '곳, 공용 위치검색 ' + stats.commons + '곳 / 못 찾음 ' + stats.none + '곳');
+  const missing = todo.filter(p => !store[keyOf(p)]).map(p => p.name + '/' + p.region + '(' + p.type + ')');
+  fs.writeFileSync(path.join(__dirname, 'photos-missing.txt'), missing.join('\n') + '\n');
+  console.log('아직 사진 없는 곳 목록: tools/photos-missing.txt');
   console.log('호출: 새로 ' + stats.calls + '회, 저장본 ' + stats.cached + '회' + (stats.limitHit ? ' / ⚠️ 관광공사 하루 한도 도달 (내일 다시 실행하면 이어서 받아요)' : ''));
 })();

@@ -130,12 +130,12 @@
  },
  "담양죽녹원|전남": {
   "images": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Damyang_Jungnogwon_%281%29.jpg/960px-Damyang_Jungnogwon_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://tong.visitkorea.or.kr/cms/resource/36/4017136_image2_1.jpg"
   ],
-  "source": "wiki",
-  "page": "죽녹원",
-  "credit": "위키미디어 공용 · Christian Bolz (크리스티안 볼츠) · CC BY-SA 4.0",
-  "creditUrl": "https://commons.wikimedia.org/wiki/File:Damyang_Jungnogwon_(1).jpg"
+  "credit": "한국관광공사",
+  "source": "kto",
+  "lat": 35.3277583239,
+  "lng": 126.9855590131
  },
  "곡성섬진강기차마을|전남": {
   "images": [
@@ -724,12 +724,12 @@
  },
  "양산통도사|경남": {
   "images": [
-   "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Korea-Tongdosa-09.jpg/960px-Korea-Tongdosa-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+   "https://tong.visitkorea.or.kr/cms/resource/85/3538985_image2_1.jpg"
   ],
-  "source": "wiki",
-  "page": "통도사",
-  "credit": "위키미디어 공용 · Steve46814 (talk) · CC BY-SA 3.0",
-  "creditUrl": "https://commons.wikimedia.org/wiki/File:Korea-Tongdosa-09.jpg"
+  "credit": "한국관광공사",
+  "source": "kto",
+  "lat": 35.5394,
+  "lng": 128.5034
  },
  "남해독일마을|경남": {
   "images": [
@@ -4098,5 +4098,68 @@
   "page": "팔룡산 돌탑공원",
   "lat": 35.2268,
   "lng": 128.5919
+ },
+ "동성로|대구": {
+  "images": [
+   "https://tong.visitkorea.or.kr/cms/resource/14/4029614_image2_1.jpg"
+  ],
+  "credit": "한국관광공사",
+  "source": "kto",
+  "lat": 35.8711113143473,
+  "lng": 128.595852198507
+ },
+ "석불사|부산": {
+  "images": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Seokbulsa_in_Busan_21.jpg/960px-Seokbulsa_in_Busan_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q113493764",
+  "credit": "위키미디어 공용 · Christian Bolz · CC BY-SA 4.0",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:Seokbulsa_in_Busan_21.jpg"
+ },
+ "마산야구장|경남": {
+  "images": [
+   "https://upload.wikimedia.org/wikipedia/commons/3/3a/Changwon_Masan_Ballpark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q624231",
+  "credit": "위키미디어 공용 · Deuterium 001 · CC0",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:Changwon_Masan_Ballpark.jpg"
+ },
+ "보성녹차밭|전남": {
+  "images": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/%EB%8C%80%ED%95%9C%EB%8B%A4%EC%9B%90_%EC%B0%A8%EB%B0%AD.JPG/960px-%EB%8C%80%ED%95%9C%EB%8B%A4%EC%9B%90_%EC%B0%A8%EB%B0%AD.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q28671311",
+  "credit": "위키미디어 공용 · Jocelyndurrey · CC BY-SA 4.0",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:%EB%8C%80%ED%95%9C%EB%8B%A4%EC%9B%90_%EC%B0%A8%EB%B0%AD.JPG"
+ },
+ "세종대왕릉|경기": {
+  "images": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/%EC%97%AC%EC%A3%BC_%EC%98%81%EB%A6%89%EA%B3%BC_%EC%98%81%EB%A6%89_%EC%84%B8%EC%A2%85_%EC%98%81%EB%A6%89_%EB%8A%A5%EC%B9%A8%28%ED%95%AD%EA%B3%B5%29.jpg/960px-%EC%97%AC%EC%A3%BC_%EC%98%81%EB%A6%89%EA%B3%BC_%EC%98%81%EB%A6%89_%EC%84%B8%EC%A2%85_%EC%98%81%EB%A6%89_%EB%8A%A5%EC%B9%A8%28%ED%95%AD%EA%B3%B5%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q107598891",
+  "credit": "위키미디어 공용 · 문화재청 · KOGL Type 1",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:%EC%97%AC%EC%A3%BC_%EC%98%81%EB%A6%89%EA%B3%BC_%EC%98%81%EB%A6%89_%EC%84%B8%EC%A2%85_%EC%98%81%EB%A6%89_%EB%8A%A5%EC%B9%A8(%ED%95%AD%EA%B3%B5).jpg"
+ },
+ "롯데월드잠실점|서울": {
+  "images": [
+   "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Lotte_World.jpg/960px-Lotte_World.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q494668",
+  "credit": "위키미디어 공용 · SJ Yang · CC BY-SA 2.0",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:Lotte_World.jpg"
+ },
+ "남산서울타워|서울": {
+  "images": [
+   "https://upload.wikimedia.org/wikipedia/commons/b/ba/Seoul_Tower_%284394893276%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+  ],
+  "source": "wikidata",
+  "page": "wikidata:Q69134 → YTN서울타워",
+  "credit": "위키미디어 공용 · Christopher from Shanghai, China · CC BY 2.0",
+  "creditUrl": "https://commons.wikimedia.org/wiki/File:Seoul_Tower_(4394893276).jpg"
  }
 }
