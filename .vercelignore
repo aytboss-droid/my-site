@@ -6,3 +6,7 @@ tools/
 .env.*
 *.key
 *.pem
+
+# Python 캐시
+__pycache__/
+*.pyc

@@ -1159,3 +1159,14 @@ a.chip { display: inline-flex; align-items: center; text-decoration: none; }
 .cloud-item-btns { display: flex; gap: 10px; }
 .cloud-del { color: #c0392b; }
 .cloud-code-form { margin-top: 16px; }
+
+/* ---------- 장소 상세: AI 여행 팁 (js/ai-tip.js) ---------- */
+.ai-tip {
+  margin: 18px 0; padding: 14px 16px; border-radius: 16px;
+  background: var(--accent-soft); border: 1px solid var(--line);
+}
+.ai-tip-title { margin: 0 0 6px; font-size: 1rem; }
+.ai-tip-desc, .ai-tip-note, .ai-tip-msg { margin: 0 0 10px; color: var(--muted); font-size: 0.88rem; }
+.ai-tip-note { margin: 10px 0 0; font-size: 0.8rem; }
+.ai-tip-msg { margin: 10px 0 0; color: var(--text); }
+.ai-tip-text { line-height: 1.7; font-size: 0.95rem; overflow-wrap: anywhere; }

@@ -84,6 +84,7 @@
   function findPlace(id) {
     return PLACE_BY_ID[id] || null;
   }
+  window.GUIDE_FIND_PLACE = findPlace; // AI 여행 팁(js/ai-tip.js)이 장소 정보를 찾을 때 씀
   function typeInfo(name) {
     for (var i = 0; i < D.TYPES.length; i++) if (D.TYPES[i].name === name) return { idx: i, icon: D.TYPES[i].icon };
     return { idx: 0, icon: '📍' };

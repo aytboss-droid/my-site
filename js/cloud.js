@@ -30,6 +30,8 @@
     auth: { flowType: 'pkce', persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, storageKey: 'guide.auth' }
   });
 
+  window.GUIDE_SB = sb; // AI 여행 팁(js/ai-tip.js)이 로그인 토큰을 쓰려고 같이 씀
+
   var user = null;      // 로그인한 사람 (없으면 null)
   var myList = [];      // 내 저장 목록
   var busy = false;
