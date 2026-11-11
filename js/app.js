@@ -46,12 +46,31 @@
     });
   })();
   var PLACE_BY_ID = {};
-  D.PLACES.forEach(function (p) { PLACE_BY_ID[p.id] = p; });
+  // 시·군: 주소에서 '경주시', '가평군' 같은 첫 낱말 (도 지역에서 한 번 더 나눠 고를 때 씀)
+  function cityOf(addr) {
+    var words = String(addr || '').split(/\s+/).slice(0, 3);
+    for (var i = 0; i < words.length; i++) {
+      if (/^[가-힣]{1,5}[시군]$/.test(words[i]) && !/(특별|광역|자치)시$/.test(words[i])) return words[i];
+    }
+    return '';
+  }
+  D.PLACES.forEach(function (p) { PLACE_BY_ID[p.id] = p; p.city = cityOf(p.address); });
+  // 지역별 시·군 목록 (가나다순). 시·군이 2곳 이상인 지역(도)만 한 번 더 나눠 보여 줌
+  var CITIES = {};
+  D.PLACES.forEach(function (p) {
+    if (!p.city) return;
+    var c = CITIES[p.region] || (CITIES[p.region] = []);
+    if (c.indexOf(p.city) === -1) c.push(p.city);
+  });
+  Object.keys(CITIES).forEach(function (r) {
+    if (CITIES[r].length < 2 || /^(서울|부산|대구|인천|광주|대전|울산|세종)$/.test(r)) delete CITIES[r];
+    else CITIES[r].sort(function (a, b) { return a.localeCompare(b, 'ko'); });
+  });
   var shownCount = PAGE_SIZE;
   var sortMode = 'rec';  // rec: 추천순, near: 가까운 순, name: 이름순
   var userPos = null;    // 가까운 순일 때 내 위치 { lat, lng }
   // themes는 여러 개를 함께 고를 수 있어서 목록(배열)으로 보관. 비어 있으면 "전체"
-  var state = { region: ALL, themes: [], type: ALL, q: '' };
+  var state = { region: ALL, city: ALL, themes: [], type: ALL, q: '' };
   var homeScrollY = 0;
   var navigatedInApp = false;
 
@@ -199,7 +218,10 @@
           return '<div class="region-group"><span class="region-group-name">' + esc(g.name) + '</span>' +
             '<div class="region-chips">' + g.regions.map(function (r) { return chipBtn('region', r, r); }).join('') + '</div></div>';
         }).join('') +
-        '</div></div>';
+        '</div>' +
+        // 도를 고르면 그 도의 시·군 (updateRegionCounts가 채움)
+        '<div id="city-chips" class="city-chips" role="group" aria-label="시·군 고르기" hidden></div>' +
+      '</div>';
     var themes =
       '<div class="filter-sec" role="group" aria-label="테마 고르기 (여러 개 선택 가능)">' +
         '<h3 class="filter-title">테마 <small>여러 개 선택 가능</small></h3>' +
@@ -216,7 +238,7 @@
   // 고른 조건 요약(✕로 지우는 작은 표시), 필터 버튼 숫자, 결과 보기 버튼 글자
   function renderActiveFilters(count) {
     var pills = [];
-    if (state.region !== ALL) pills.push({ clear: 'region', text: '📍 ' + state.region });
+    if (state.region !== ALL) pills.push({ clear: 'region', text: '📍 ' + state.region + (state.city !== ALL ? ' ' + state.city : '') });
     state.themes.forEach(function (t) { pills.push({ clear: 'themes:' + t, text: themeInfo(t).icon + ' ' + t }); });
     if (state.type !== ALL) pills.push({ clear: 'type', text: typeInfo(state.type).icon + ' ' + state.type });
     var box = $('#active-filters');
@@ -232,7 +254,7 @@
   }
 
   function clearFilter(what) {
-    if (what === 'region') state.region = ALL;
+    if (what === 'region') { state.region = ALL; state.city = ALL; }
     else if (what === 'type') state.type = ALL;
     else if (what.indexOf('themes:') === 0) {
       var i = state.themes.indexOf(what.slice(7));
@@ -280,12 +302,14 @@
       }
     } else {
       state[key] = value;
+      if (key === 'region') state.city = ALL; // 지역을 바꾸면 시·군은 처음부터
     }
   }
 
   // skipRegion: 지역 조건만 빼고 검사 (지역 버튼의 개수를 셀 때 사용)
   function matches(p, skipRegion) {
     if (!skipRegion && state.region !== ALL && p.region !== state.region) return false;
+    if (!skipRegion && state.city !== ALL && p.city !== state.city) return false;
     // 고른 테마를 모두 가진 장소만 (예: 연인과 함께 + 바닷가 → 둘 다 해당하는 곳)
     for (var t = 0; t < state.themes.length; t++) {
       if ((p.themes || []).indexOf(state.themes[t]) === -1) return false;
@@ -302,7 +326,7 @@
   }
 
   function isFiltered() {
-    return state.region !== ALL || state.themes.length > 0 || state.type !== ALL || state.q.trim() !== '';
+    return state.region !== ALL || state.city !== ALL || state.themes.length > 0 || state.type !== ALL || state.q.trim() !== '';
   }
 
   // 지역 버튼 옆 숫자: 지금 고른 테마·종류·검색어 기준으로 그 지역에 몇 곳이 있는지
@@ -314,6 +338,26 @@
       c.querySelector('.chip-count').textContent = n;
       c.classList.toggle('is-empty', n === 0);
     });
+    renderCityChips(base);
+  }
+
+  // 도를 골랐을 때 그 도의 시·군 버튼 (숫자는 지금 조건에 맞는 장소 수)
+  function renderCityChips(base) {
+    var box = $('#city-chips');
+    if (!box) return;
+    var cities = state.region !== ALL ? CITIES[state.region] : null;
+    box.hidden = !cities;
+    if (!cities) { box.innerHTML = ''; return; }
+    var inRegion = base.filter(function (p) { return p.region === state.region; });
+    var btn = function (value, text, n) {
+      return '<button class="chip chip-city' + (n === 0 ? ' is-empty' : '') + '" type="button" data-key="city" data-value="' + esc(value) + '" ' +
+        'aria-pressed="' + (state.city === value) + '">' + esc(text) + ' <span class="chip-count">' + n + '</span></button>';
+    };
+    box.innerHTML = '<h4 class="city-title">📍 ' + esc(state.region) + ' 시·군</h4>' +
+      '<div class="chips">' + btn(ALL, state.region + ' 전체', inRegion.length) +
+      cities.map(function (c) {
+        return btn(c, c, inRegion.filter(function (p) { return p.city === c; }).length);
+      }).join('') + '</div>';
   }
 
   // 정렬: 추천순(기본 순서) / 가까운 순(내 위치 기준, 좌표 없는 곳은 뒤로) / 이름순
@@ -483,7 +527,7 @@
   }
 
   function resetFilters() {
-    state.region = state.type = ALL;
+    state.region = state.city = state.type = ALL;
     state.themes = [];
     state.q = '';
     $('#search-input').value = '';
@@ -820,7 +864,12 @@
   }
 
   /* ---------- 맞춤 코스 만들기 (날짜 + 지역 여러 곳 + 테마) ---------- */
-  var builder = { open: false, start: null, end: null, regions: [], themes: [] };
+  // cities: 도를 골랐을 때 더 좁힌 시·군 ('경북|경주시' 모양). 그 도에서 하나도 안 고르면 도 전체
+  var builder = { open: false, start: null, end: null, regions: [], cities: [], themes: [] };
+  function cityOk(p, cities) {
+    var mine = (cities || []).filter(function (c) { return c.indexOf(p.region + '|') === 0; });
+    return !mine.length || mine.indexOf(p.region + '|' + p.city) !== -1;
+  }
 
   function nextSaturday() {
     var d0 = new Date();
@@ -835,7 +884,7 @@
       (p.rank ? Math.max(0, 1.5 - p.rank * 0.5) : 0);
   }
 
-  function generateTrip(start, end, regions, themes) {
+  function generateTrip(start, end, regions, themes, cities) {
     var n = Math.min(30, daysBetween(start, end) + 1);
     var month = parseDate(start).getMonth() + 1;
     var rec = (D.MONTHLY || []).filter(function (m) { return m.month === month; })[0];
@@ -843,7 +892,9 @@
     var score = function (p) { return tripScore(p, recIds, recRegions); };
 
     // 후보: 좌표가 있는 곳, 고른 지역, 고른 테마(하나라도 맞으면). 숙소는 테마와 관계없이 후보
-    var allPool = D.PLACES.filter(function (p) { return p.lat != null && (!regions.length || regions.indexOf(p.region) !== -1); });
+    var allPool = D.PLACES.filter(function (p) {
+      return p.lat != null && (!regions.length || regions.indexOf(p.region) !== -1) && (isLodging(p) || cityOk(p, cities));
+    });
     var pool = allPool;
     if (themes.length) {
       pool = allPool.filter(function (p) {
@@ -920,6 +971,11 @@
     });
 
     var names = regions.length ? regions : regionList;
+    // 시·군을 골랐으면 제목에 시·군 이름 (예: 경주시·포항시)
+    names = names.map(function (r) {
+      var cs = (cities || []).filter(function (c) { return c.indexOf(r + '|') === 0; }).map(function (c) { return c.split('|')[1]; });
+      return cs.length ? cs.join('·') : r;
+    });
     return {
       source: 'auto',
       title: names.join('·') + ' ' + nightsText(n) + ' 맞춤 코스' + (themes.length ? ' (' + themes.join(', ') + ')' : ''),
@@ -956,6 +1012,15 @@
       '<p class="builder-range">📅 ' + fmtDate(start) + ' ~ ' + fmtDate(end) + ' · ' + nightsText(len) + '</p>' +
       '<div class="b-label">지역 <small>여러 곳 선택 가능 · 숫자는 장소 수</small></div>' +
       '<div class="chips b-chips">' + regionChips + '</div>' +
+      // 고른 도마다 시·군 (안 고르면 그 도 전체)
+      builder.regions.filter(function (r) { return CITIES[r]; }).map(function (r) {
+        var cc = {};
+        D.PLACES.forEach(function (p) { if (p.region === r && p.lat != null && !isLodging(p) && p.city) cc[p.city] = (cc[p.city] || 0) + 1; });
+        return '<div class="b-label b-city-label">📍 ' + esc(r) + ' 시·군 <small>안 고르면 ' + esc(r) + ' 전체</small></div>' +
+          '<div class="chips b-chips">' + CITIES[r].filter(function (c) { return cc[c]; }).map(function (c) {
+            return chip('cities', r + '|' + c, c, builder.cities.indexOf(r + '|' + c) !== -1, cc[c]);
+          }).join('') + '</div>';
+      }).join('') +
       '<div class="b-label">테마 <small>선택 · 하나라도 맞으면 포함</small></div>' +
       '<div class="chips b-chips">' + themeChips + '</div>' +
       '<button class="btn builder-make" type="button" data-b-make>✨ ' + nightsText(len) + ' 코스 만들기</button>' +
@@ -974,7 +1039,7 @@
     var start = useBuilderDates ? builder.start : plan.startDate;
     var end = useBuilderDates ? builder.end : plan.endDate;
     if (!isDate(start) || !isDate(end) || daysBetween(start, end) < 0) { toast('날짜를 다시 확인해 주세요'); return; }
-    var p = generateTrip(start, end, builder.regions, builder.themes);
+    var p = generateTrip(start, end, builder.regions, builder.themes, builder.cities);
     if (!p || !p.days.some(function (d) { return d.items.length; })) {
       toast('조건에 맞는 장소가 부족해요. 지역이나 테마를 넓혀 보세요');
       return;
@@ -1564,6 +1629,25 @@
     return 'https://map.kakao.com/link/from/' + encodeURIComponent(a.name) + ',' + a.lat + ',' + a.lng +
       '/to/' + encodeURIComponent(b.name) + ',' + b.lat + ',' + b.lng;
   }
+  // 네이버 지도 길찾기: 좌표·이름을 넣으면 네이버가 새 길찾기 화면으로 넘겨 줌
+  function naverDirectionsURL(a, b) {
+    if (a.lat == null || b.lat == null) return 'https://map.naver.com/p/search/' + encodeURIComponent(b.mapQuery || b.address || b.name);
+    return 'https://map.naver.com/index.nhn?menu=route&pathType=1' +
+      '&slng=' + a.lng + '&slat=' + a.lat + '&stext=' + encodeURIComponent(a.name) +
+      '&elng=' + b.lng + '&elat=' + b.lat + '&etext=' + encodeURIComponent(b.name);
+  }
+  // [길찾기]를 누르면 카카오맵·네이버 지도 중 고르는 창
+  function openRoutePicker(fromId, toId) {
+    var a = findPlace(fromId), b = findPlace(toId);
+    if (!a || !b) return;
+    openSheet('길찾기 앱 고르기',
+      '<p class="route-pick-desc">' + esc(a.name) + ' → ' + esc(b.name) + '</p>' +
+      '<div class="route-pick">' +
+        '<a class="btn route-kakao" href="' + esc(directionsURL(a, b)) + '" target="_blank" rel="noopener" data-close-dialog>카카오맵으로 길찾기 ↗</a>' +
+        '<a class="btn route-naver" href="' + esc(naverDirectionsURL(a, b)) + '" target="_blank" rel="noopener" data-close-dialog>네이버 지도로 길찾기 ↗</a>' +
+        '<button class="btn btn-outline" type="button" data-close-dialog>취소</button>' +
+      '</div>', '.route-kakao');
+  }
 
   var START_OPTS = [];
   for (var so = 6 * 60; so <= 14 * 60; so += 30) START_OPTS.push(so);
@@ -1622,7 +1706,7 @@
         var next = c.rows[i + 1].p;
         html += '<li class="leg"><span>↓ ' +
           (r.leg.km !== null ? '약 ' + fmtKm(r.leg.km) + ' · ' + r.leg.mode + ' 약 ' + fmtDur(r.leg.min) : '위치 정보 없음 · 30분으로 계산') +
-          '</span><a href="' + directionsURL(p, next) + '" target="_blank" rel="noopener">길찾기 ↗</a></li>';
+          '</span><button class="link-btn leg-route" type="button" data-route="' + esc(p.id) + '|' + esc(next.id) + '" aria-haspopup="dialog">길찾기 ↗</button></li>';
       }
       return html;
     }).join('');
@@ -1718,6 +1802,11 @@
       setPlan(fp, null, function () { goPlan(); toast('찜한 장소로 일정을 만들었어요'); });
       return true;
     }
+    if ((el = target.closest('[data-route]'))) {
+      var rt = el.dataset.route.split('|');
+      openRoutePicker(rt[0], rt[1]);
+      return true;
+    }
     if (target.closest('[data-ai-summary]')) { aiSummarize(); return true; }
     if (target.closest('[data-ai-course]')) { aiMakeCourse(); return true; }
     if ((el = target.closest('[data-build-course]'))) {
@@ -1732,6 +1821,8 @@
         var at = list.indexOf(val);
         if (at === -1) list.push(val); else list.splice(at, 1);
       }
+      // 지역을 빼면 그 지역의 시·군 선택도 지움
+      builder.cities = builder.cities.filter(function (c) { return builder.regions.indexOf(c.split('|')[0]) !== -1; });
       rerenderBuilder();
       var again = $('#builder [data-b-key="' + key + '"][data-b-value="' + val + '"]');
       if (again) again.focus();
