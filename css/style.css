@@ -1127,3 +1127,22 @@ a.chip { display: inline-flex; align-items: center; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---------- 내 여행 클라우드 저장·불러오기 (js/cloud.js) ---------- */
+.cloud-box {
+  margin: 28px 0 8px; padding: 16px; border: 1px solid var(--line);
+  border-radius: 16px; background: var(--surface);
+}
+.cloud-title { margin: 0 0 4px; font-size: 1.05rem; }
+.cloud-desc, .cloud-note { margin: 0 0 10px; color: var(--muted); font-size: 0.9rem; }
+.cloud-note { margin: 10px 0 0; font-size: 0.82rem; }
+.cloud-last { margin: 0 0 10px; font-size: 0.92rem; }
+.cloud-code { letter-spacing: 0.08em; color: var(--accent-strong); font-family: ui-monospace, Consolas, monospace; }
+.cloud-at { color: var(--muted); font-size: 0.85rem; }
+.cloud-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.cloud-input {
+  flex: 1 1 160px; min-width: 0; min-height: 40px; padding: 8px 12px;
+  border: 1.5px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text);
+  font: inherit; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.cloud-input:focus { outline: 3px solid var(--accent); outline-offset: 1px; }

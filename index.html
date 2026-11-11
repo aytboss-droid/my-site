@@ -164,6 +164,9 @@
 
     <!-- ② 장소 상세 (app.js가 채움) -->
     <section id="view-place" class="view" hidden></section>
+
+    <!-- 내 여행 클라우드 저장·불러오기 (js/cloud.js가 채움, '내 여행' 화면에서만 보임) -->
+    <section id="cloud-box" class="cloud-box" aria-label="클라우드 저장·불러오기" hidden></section>
   </main>
 
   <footer class="site-footer wrap">
@@ -199,5 +202,8 @@
   <!-- 사진이 없는 장소에 붙이는 사진 (tools/build-photos.js가 만듦, 없어도 사이트는 동작) -->
   <script src="js/photos.js" onerror="window.GUIDE_PHOTOS = {}"></script>
   <script src="js/app.js"></script>
+  <!-- Supabase 연결 (공개 키만 들어 있음) + 클라우드 저장·불러오기 -->
+  <script src="js/supabase-config.js"></script>
+  <script src="js/cloud.js"></script>
 </body>
 </html>
