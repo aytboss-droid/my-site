@@ -1146,3 +1146,16 @@ a.chip { display: inline-flex; align-items: center; text-decoration: none; }
   font: inherit; letter-spacing: 0.08em; text-transform: uppercase;
 }
 .cloud-input:focus { outline: 3px solid var(--accent); outline-offset: 1px; }
+/* 로그인·내 저장 목록 */
+.cloud-auth { display: grid; gap: 6px; max-width: 420px; }
+.cloud-label { font-size: 0.88rem; font-weight: 700; }
+.cloud-hint { font-weight: 400; color: var(--muted); }
+.cloud-input-plain { letter-spacing: normal; text-transform: none; }
+.cloud-user { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0 0 6px; font-size: 0.92rem; overflow-wrap: anywhere; }
+.cloud-sub { margin: 16px 0 6px; font-size: 0.95rem; }
+.cloud-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.cloud-item { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.cloud-item-info { display: flex; align-items: baseline; gap: 8px; }
+.cloud-item-btns { display: flex; gap: 10px; }
+.cloud-del { color: #c0392b; }
+.cloud-code-form { margin-top: 16px; }
